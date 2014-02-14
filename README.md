@@ -9,9 +9,9 @@ Pro
 
 ## Demo
 
-[http://rawgithub.com/AlloyTeam/Pro/master/demo/index.html](http://rawgithub.com/AlloyTeam/Pro/master/demo/index.html)
-
 ![qrcode](https://f.cloud.github.com/assets/677114/2168855/86661b22-954c-11e3-951d-ffe40ad41d16.png)
+
+[http://rawgithub.com/AlloyTeam/Pro/master/demo/index.html](http://rawgithub.com/AlloyTeam/Pro/master/demo/index.html)
 
 ## Basic template
 
