@@ -87,7 +87,7 @@ define(['./event', './data', './requestAnimationFrame'], function () {
                 this.translate(this._opened? left: right);
             }
         }
-    }
+    };
 
     Deleter.prototype.start = function (e) {
 
@@ -99,7 +99,7 @@ define(['./event', './data', './requestAnimationFrame'], function () {
 
         clearInterval(this._ticker);
         this._ticker = setInterval(this.track, 100);
-    }
+    };
 
     Deleter.prototype.move = function (e) {
 
@@ -128,7 +128,7 @@ define(['./event', './data', './requestAnimationFrame'], function () {
                 return false;
             }
         }
-    }
+    };
 
     Deleter.prototype.end = function (e) {
         clearInterval(this._ticker);
@@ -165,7 +165,7 @@ define(['./event', './data', './requestAnimationFrame'], function () {
 
         // reset state
         this._state = 0;
-    }
+    };
 
     $.Deleter = Deleter;
 
