@@ -1,0 +1,11 @@
+{
+    "name": "Pro",
+    "description": "Framework for mobile platform",
+    "version": "1.0.0",
+    "author": {
+        "name": "yuanyan",
+        "url": "http://madscript.com"
+    },
+    "dependencies": {},
+    "devDependencies": {}
+}

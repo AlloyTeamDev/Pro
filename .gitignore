@@ -1,15 +1,15 @@
-lib-cov
-*.seed
+# Files to ignore
+.DS_Store
+.localized
+Thumbs.db
 *.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
+*.sass-cache
 
-pids
-logs
-results
-
-npm-debug.log
+# Folders to ignore
+.idea
+.hg
+.svn
+.CVS
+.cache
+tmp
 node_modules

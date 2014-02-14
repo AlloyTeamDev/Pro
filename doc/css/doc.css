@@ -1,0 +1,952 @@
+/* Hard reset
+-------------------------------------------------- */
+
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+section,
+summary,
+time,
+audio,
+video {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+/* Base styles
+-------------------------------------------------- */
+
+body {
+  position: static !important; /* Overrides the fixed positioning of body in Ratchet */
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Typography
+-------------------------------------------------- */
+
+hr {
+  height: 0;
+  margin: 10px 0 30px;
+  border: solid #ddd;
+  border-width: 1px 0 0;
+  clear: both;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-rendering: optimizeLegibility;
+}
+
+.logo {
+  width: 26px;
+  vertical-align: -6px;
+  margin-right: 5px;
+}
+
+b {
+    color: green;
+}
+
+a {
+    color: grey;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/* Doc structural styles
+-------------------------------------------------- */
+
+.doc-outer-wrapper {
+  position: relative;
+}
+
+.doc-inner-wrapper {
+  width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 5px;
+}
+
+/* Masthead (navigation)
+-------------------------------------------------- */
+
+.doc-masthead {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  padding: 10px 0;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 0 5px rgba(0,0,0,.1);
+}
+
+.doc-masthead .doc-inner-wrapper {
+  line-height: 40px;
+}
+
+.doc-masthead-title {
+  font-weight: 700;
+  font-size: 21px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.doc-navigation {
+  float: right;
+  font-size: 15px;
+}
+
+.nav-item {
+  position: relative;
+  float: left;
+  margin-right: 30px;
+  list-style: none;
+}
+
+.nav-item:last-child {
+  margin-right: 0;
+}
+
+.nav-item a {
+  position: relative;
+  color: #777;
+  text-decoration: none;
+}
+
+.nav-item a:hover {
+  color: #555;
+}
+
+/* Give the components link a bit more room to fit the caret */
+.nav-item.nav-components {
+  margin-right: 45px;
+}
+
+/* Give the  components link a down caret */
+.nav-components-link:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 0;
+  top: 8px;
+  right: -15px;
+  margin-left: -4px;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #777;
+  border-left: 4px solid transparent;
+}
+
+/* The components list dropdown */
+.components-list {
+  position: absolute;
+  display: none;
+  top: 45px;
+  left: -20px;
+  z-index: -1;
+  padding: 10px 0;
+  line-height: 1.1;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(0,0,0,.05);
+}
+
+.components-list.active {
+  z-index: 100;
+  display: block;
+}
+
+.components-list:before,
+.components-list:after {
+  content: '';
+  position: absolute;
+  left: 30px;
+  width: 0;
+  height: 0;
+}
+
+.components-list:before {
+  top: -11px;
+  margin-left: -11px;
+  border-right: 11px solid transparent;
+  border-bottom: 11px solid rgba(0,0,0,.3);
+  border-left: 11px solid transparent;
+}
+
+.components-list:after {
+  top: -10px;
+  margin-left: -10px;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  border-left: 10px solid transparent;
+}
+
+.components-list li {
+  list-style: none;
+}
+
+.components-list li:last-child {
+  padding-bottom: 0;
+}
+
+.components-list li a {
+  display: block;
+  width: 150px;
+  padding: 10px 20px;
+}
+
+.components-list li a:hover {
+  color: #fff;
+  background-color: #1eb0e9;
+}
+
+#connect{
+  position: absolute;
+  top: -8px;
+  right: 35px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* Jumbo header
+-------------------------------------------------- */
+
+.doc-header {
+  height: 530px;
+  margin-top: 60px;
+  background-color: #02122b;
+  background-image: url(../img/banner-bg.png);
+  background-size: cover;
+  box-shadow: inset 0 0 10px rgba(0,0,0,.6);
+}
+
+.doc-header-text {
+  position: relative;
+  z-index: 3;
+  top: 140px;
+  width: 800px;
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0 5px #000;
+  -webkit-animation: fadeintext 2s;
+     -moz-animation: fadeintext 2s;
+}
+
+.doc-header-subtitle {
+  margin-bottom: 35px;
+  font-size: 45px;
+  font-weight: 300;
+  line-height: 55px;
+}
+
+.doc-btn {
+  display: inline-block;
+  padding: 18px 40px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  line-height: 1;
+  background-color: #f26629; /* Old browsers */
+  background-image: -moz-linear-gradient(top,  #f95e0c 0%, #e53003 100%); /* FF3.6+ */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f95e0c), color-stop(100%,#e53003)); /* Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(top,  #f95e0c 0%,#e53003 100%); /* Chrome10+,Safari5.1+ */
+  background-image: -o-linear-gradient(top,  #f95e0c 0%,#e53003 100%); /* Opera 11.10+ */
+  background-image: -ms-linear-gradient(top,  #f95e0c 0%,#e53003 100%); /* IE10+ */
+  background-image: linear-gradient(to bottom,  #f95e0c 0%,#e53003 100%); /* W3C */
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 5px 5px rgba(0,0,0,.2);
+}
+
+.doc-btn:hover {
+  color: #fff;
+  background-color: #ff7234; /* Old browsers */
+  background-image: -moz-linear-gradient(top,  #f95e0c 0%, #cd2a02 100%); /* FF3.6+ */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f95e0c), color-stop(100%,#cd2a02)); /* Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(top,  #f95e0c 0%,#cd2a02 100%); /* Chrome10+,Safari5.1+ */
+  background-image: -o-linear-gradient(top,  #f95e0c 0%,#cd2a02 100%); /* Opera 11.10+ */
+  background-image: -ms-linear-gradient(top,  #f95e0c 0%,#cd2a02 100%); /* IE10+ */
+  background-image: linear-gradient(to bottom,  #f95e0c 0%,#cd2a02 100%); /* W3C */
+}
+
+.doc-btn:active {
+  padding: 19px 40px 17px;
+  background-color: #cd2a02;
+  background-image: none;
+  box-shadow: inset 0 0 5px rgba(0,0,0,.4);
+}
+
+
+/* iPhone previewer
+-------------------------------------------------- */
+
+.iphone {
+  position: relative;
+  top: 50px;
+  float: right;
+  width: 375px;
+  height: 806px;
+  font-family: "Helvetica Neue", sans-serif;
+  background-image: url("../img/iphone.png");
+}
+
+.iphone-fixed,
+.iphone-bottom {
+  left: 50%;
+  margin-left: 125px;
+}
+
+.iphone-fixed {
+  position: fixed;
+  top: 30px;
+}
+
+.iphone-bottom {
+  position: absolute;
+  top: auto;
+  bottom: 130px;
+}
+
+.iphone .iphone-content {
+  position: absolute;
+  top: 147px;
+  left: 27px;
+  width: 320px;
+  height: 548px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.iphone .content,
+.component-example .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.component-example .content {
+  position: relative;
+}
+
+/* Mad override to avoid it being styled like the block level link */
+.component-example .list a[data-transition="slide-out"],
+.iphone .list a[data-transition="slide-out"] {
+  padding: 0;
+  display: inline;
+  margin: 0;
+  color: #0882f0;
+}
+
+/* Content layout
+-------------------------------------------------- */
+
+.content-section {
+  position: relative;
+  padding-top: 80px;
+}
+
+/* Section header
+-------------------------------------------------- */
+
+.section-header {
+  padding-bottom: 30px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.section-title {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1;
+  color: #333;
+}
+
+.section-description {
+  font-weight: 300;
+  font-size: 24px;
+  color: #777;
+}
+
+.section-informational {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #fafafa;
+  padding-bottom: 70px;
+  padding-top: 141px;/* 80+61 px*/
+}
+.section-performance {
+ border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #fafafa;
+  padding-bottom: 70px;
+}
+/* Getting started & page setup
+-------------------------------------------------- */
+
+.steps {
+  overflow: hidden;
+  padding-top: 40px;
+}
+
+.steps .step {
+  float: left;
+  width: 306px;
+  margin-right: 10px;
+  margin-left: 10px;
+  list-style: none;
+}
+
+.step-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.step-description {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  color: #333;
+
+}
+
+.steps .step:last-child {
+  margin-right: 0;
+}
+
+.steps ul{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 15px;
+}
+
+/* Components
+-------------------------------------------------- */
+
+.section-components {
+  padding-bottom: 350px;
+  background-color: #fff;
+}
+
+.component {
+  position: relative;
+  padding-top: 80px;
+  width: 550px;
+  margin-top: 1px;
+  font-family: "proxima-nova", "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  opacity: .3; /* Fade content back until the user scrolls to it. */
+  -webkit-transition: opacity .2s ease-in-out;
+}
+
+.component:last-child {
+  margin-bottom: 320px;
+}
+
+/* Active class applied when the specific component is in focus */
+.component.active {
+  opacity: 1;
+}
+
+.component-title {
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 35px;
+}
+
+.component-title a {
+  font-size: 16px;
+  float: right;
+}
+
+.component-description {
+  margin-bottom: 13px;
+  color: #777;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 300;
+}
+
+.component-note {
+  margin-top: 10px;
+  color: #999;
+  font-size: 14px;
+  line-height: 18px;
+  font-style: italic;
+}
+
+.component-title + .component-example {
+  margin-top: 13px;
+}
+
+.content-section .prettyprint,
+.content-section .instruction-code {
+  margin-top: 10px;
+  padding: 10px;
+  overflow-x: auto;
+  font-size: 13px;
+  font-family: monaco, menlo, monospace;
+  color: #777;
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.prettyprint + .component-description,
+.component-note + .component-description {
+  margin-top: 36px;
+}
+
+/* Content specific styles
+-------------------------------------------------- */
+
+/* Make the example bars stay put in the doc */
+.iphone [class*="bar"] {
+  position: absolute;
+}
+
+/* Component examples on mobile */
+.component-example {
+  position: relative;
+  display: none;
+  margin-bottom: 20px;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: normal;
+}
+
+.component-example-fullbleed {
+  margin-right: -20px;
+  margin-left: -20px;
+}
+
+/* Bar examples */
+.component-example [class*="bar"] {
+  position: relative;
+}
+
+.component-example .bar-header-secondary {
+  top: 0;
+}
+
+.iphone .btn-section .button {
+  display: block;
+  margin: 0 auto;
+}
+
+.iphone .block-btn-section .block-button {
+  margin-top: 10px;
+}
+
+.iphone .block-btn-section .block-button:first-child {
+  margin-top: 100px;
+}
+
+
+/* Give inset components in the iphone correct margin */
+.iphone .list.inset,
+#segmentedControllersInPhone .segmented-controller,
+#formsInPhone form,
+#formsWithInputGroupInPhone form,
+#formsWithInputGroupAndLabelsInPhone form {
+  margin: 10px;
+}
+
+#pushInPhone .list {
+  margin-top: 44px;
+}
+
+/* Footer
+-------------------------------------------------- */
+
+.doc-footer {
+  border-top: 1px solid #DDD;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.doc-footer .doc-inner-wrapper {
+  text-align: center
+}
+
+.doc-footer p {
+  font-size: 16px;
+  color: #000;
+}
+
+
+/* Banner for Mozilla and IE about component rendering poorly
+------------------------------------------------------------- */
+.notice-banner {
+  cursor: pointer;
+  height: 0;
+  opacity: 0;
+  padding: 0;
+  color: #333;
+  font-size: 16px;
+  text-align: center;
+  background-color: #fff9c4; /* Old browsers */
+  background-image: -moz-linear-gradient(top,  #fff9c4 0%, #fff38d 100%); /* FF3.6+ */
+  background-image: -ms-linear-gradient(top,  #fff9c4 0%,#fff38d 100%); /* IE10+ */
+  background-image: linear-gradient(to bottom,  #fff9c4 0%,#fff38d 100%); /* W3C */
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.1);
+  -moz-animation: shownotice 1s infinite;
+}
+
+
+/* Media queries
+-------------------------------------------------- */
+
+@media only screen and (max-width: 1039px) {
+  .doc-inner-wrapper  {
+    width: 920px;
+  }
+
+  .doc-header-text {
+    width: 700px;
+  }
+
+  .steps .step {
+    width: 280px;
+  }
+
+  .component {
+    width: 500px;
+  }
+
+  .iphone-fixed,
+  .iphone-bottom {
+    margin-left: 85px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  .doc-header-text,
+  .doc-inner-wrapper  {
+    width: 700px;
+  }
+
+  .doc-header {
+    height: 400px;
+  }
+
+  .doc-header-text {
+    top: 75px;
+  }
+
+  .steps .step {
+    width: 205px;
+  }
+
+  .component {
+    width: 300px;
+  }
+
+  .iphone-fixed,
+  .iphone-bottom {
+    margin-left: -25px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .doc-outer-wrapper,
+  .doc-inner-wrapper,
+  .doc-header-text,
+  .doc-content,
+  .component {
+    width: auto;
+  }
+
+  .doc-inner-wrapper {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  /* Have the masthead scroll away instead of being fixed */
+  .doc-masthead {
+    position: absolute;
+    padding: 2px 0 1px;
+  }
+
+  .doc-masthead-title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  /* Hide the navigation on mobile. Scroll away! */
+  .doc-navigation {
+    display: none;
+  }
+  #connect{
+    display: none;
+  }
+
+  .doc-header {
+    height: 320px;
+    margin-top: 44px;
+  }
+
+  .doc-header-text {
+    top: 50px;
+  }
+
+  .doc-header-subtitle {
+    margin-bottom: 18px;
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .doc-btn {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+  }
+
+  .doc-btn:active {
+    padding: 16px 0 14px;
+  }
+
+  .social ul {
+    height: auto;
+  }
+
+  .social li {
+    padding-bottom: 15px;
+  }
+
+  .social li:last-child {
+    padding-bottom : 0;
+  }
+
+  .content-section {
+    padding-top: 50px;
+  }
+
+  .section-header {
+    padding-bottom: 50px;
+  }
+
+  .section-title {
+    margin-bottom: 5px;
+    font-size: 40px;
+  }
+
+  .section-description {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .section-components {
+    padding-bottom: 0px;
+  }
+
+  .section-informational {
+    padding-bottom: 70px;
+    padding-top: 94px; /* 50+44 px*/
+  }
+
+  .steps .step {
+    float: none;
+    width: auto;
+    margin: 0 0 30px 0;
+  }
+
+  .steps .step:last-child {
+    margin: 0;
+  }
+
+  .notice-banner {
+    position: relative;
+    top: 0;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .notice-banner:after {
+    display: none;
+  }
+
+  .component {
+    padding: 50px 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    opacity: 1;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .component:last-child {
+    margin-bottom: 80px;
+  }
+
+  .component-example {
+    display: block;
+  }
+
+  /* Hide the iPhone on mobile */
+  .iphone {
+    display: none;
+  }
+ 
+}
+
+@media only screen and (max-width: 320px) {
+  .doc-header-text {
+    top: 30px;
+  }
+}
+
+/* Animations
+-------------------------------------------------- */
+
+@-webkit-keyframes fadeintext {
+  0% {
+   opacity: 0;
+   -webkit-transform: translateY(20px);
+  }
+  50% {
+   opacity: 0;
+   -webkit-transform: translateY(20px);
+  }
+  100% {
+   opacity: 1;
+   -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes fadeinsocial {
+  0% {
+   opacity: 0;
+  }
+  85% {
+   opacity: 0;
+  }
+  100% {
+   opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeintext {
+  0% {
+   opacity: 0;
+   -moz-transform: translateY(20px);
+  }
+  50% {
+   opacity: 0;
+   -moz-transform: translateY(20px);
+  }
+  100% {
+   opacity: 1;
+   -moz-transform: translateY(0);
+  }
+}
+
+@-moz-keyframes fadeinsocial {
+  0% {
+   opacity: 0;
+  }
+  85% {
+   opacity: 0;
+  }
+  100% {
+   opacity: 1;
+  }
+}
+
+@-moz-keyframes shownotice {
+  0% {
+    min-height: 30px;
+    padding: 20px 0;
+    opacity: 1;
+  }
+  100% {
+    min-height: 30px;
+    padding: 20px 0;
+    opacity: 1;
+  }
+}

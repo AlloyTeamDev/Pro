@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>PRO DEMO</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="../css/pro.css?embed" />
+    <link rel="stylesheet" type="text/css" href="./vendor/ionicons/css/ionicons.css" />
+    <style>
+        .my-header {
+            color: #6F6F74;
+            text-align: center;
+            line-height: 50px;
+
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+        }
+        .my-banner {
+            margin-bottom: 20px;
+            padding: 10px 12px;
+            background-color: #FF9937;
+            height: 85px;
+            color: #ffffff
+        }
+        .my-banner-text {
+            display: block;
+        }
+        .my-banner-count {
+            font-size: 40px;
+            -webkit-transform: translate3d(0, 0, 0);
+        }
+        .my-banner-unit {
+            font-size: 20px;
+        }
+
+        .my-item-left{
+            position: absolute;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #eee;
+            height: 60px;
+            width: 60px;
+            padding: 8px 6px;
+            font-size: 12px;
+            line-height: 12px;
+        }
+
+        .my-item-count {
+            font-size: 30px;
+            line-height: 30px;
+        }
+
+        .my-item-right {
+            margin-left: 70px;
+        }
+
+        .my-item-right p {
+            font-size: 14px;
+        }
+
+        .my-deletable {
+            z-index: 2;
+            background: #fff;
+        }
+
+        .my-delete {
+            height: 80px;
+            line-height: 80px;
+            width: 60px;
+            text-align: center;
+            position: absolute;
+            top:0;
+            right: 0;
+            background: rgb(250, 34, 34);
+            z-index: 1;
+            color: #fff;
+        }
+
+        [data-lazy] {
+            display: block;
+            margin: 10px auto;
+            height: 120px;
+            width: 240px;
+            border: 1px solid #eee;
+        }
+
+    </style>
+</head>
+<body class="ui-app">
+
+<!-- 一个App只存在一个头部与尾部 -->
+<div class="ui-top-bar js-no-bounce">
+    <!-- 头部内容 -->
+    <header class="my-header">PRO DEMO</header>
+    <!-- /头部内容-->
+</div>
+
+<div class="ui-bottom-bar js-no-bounce" role="toolbar" tabindex="0">
+    <!-- 尾部内容 -->
+    <button class="ui-bottom-bar-button js-active" data-toggle="tab" data-target="#page1">
+        <span class="ui-icon ion-ios7-camera-outline"></span>
+        <span class="ui-label">CSS</span>
+    </button>
+    <button class="ui-bottom-bar-button" data-toggle="tab" data-target="#page2">
+        <span class="ui-icon ion-ios7-stopwatch-outline"></span>
+        <span class="ui-label">CSS</span>
+    </button>
+    <button class="ui-bottom-bar-button" data-toggle="tab" data-target="#page3">
+        <span class="ui-icon ion-ios7-star-outline"></span>
+        <span class="ui-label">JS</span>
+    </button>
+    <button class="ui-bottom-bar-button" data-toggle="tab" data-target="#page4">
+        <span class="ui-icon ion-ios7-gear-outline"></span>
+        <span class="ui-label">JS</span>
+    </button>
+    <button class="ui-bottom-bar-button" data-toggle="tab" data-target="#page5">
+        <span class="ui-icon ion-ios7-bell-outline"></span>
+        <span class="ui-label">JS</span>
+    </button>
+    <!-- /尾部内容-->
+</div>
+
+<!-- 一个App可以多个page -->
+<div id="page1" class="ui-page js-active">
+    <div class="js-page-content">
+        <!-- 主体内容 -->
+        <ul class="ui-groupbutton" role="tablist">
+            <li class="ui-button js-active" data-toggle="tab" data-target="#page1-tab1" aria-controls="tab1" role="tab">列表1</li>
+            <li class="ui-button" data-toggle="tab" data-target="#page1-tab2" aria-controls="tab2" role="tab">列表2<span class="ui-red-counter">123</span></li>
+        </ul>
+
+        <div class="ui-tab js-active" id="page1-tab1" role="tabpanel">
+
+            <p class="my-banner">
+                <span class="my-banner-text">你已累计消费</span>
+                <span class="my-banner-count" id="countup" data-from="0" data-to="9521">0000</span>
+                <span class="my-banner-unit">元</span>
+            </p>
+
+            <ul class="ui-list">
+                <li class="ui-item arrow-right"><a href="#">团购券<span class="ui-right">未使用 <span class="ui-red">11</span></span></a></li>
+                <li class="ui-item ui-ignore-space"><a href="#">
+                    <div class="my-item-left">
+                        <span class="ui-block">还剩</span>
+                        <span class="my-item-count">26</span>天
+                    </div>
+                    <div class="my-item-right">
+                        <p class="ui-no-wrap">商家名称: 上海的自来水来自海上上海的自来水来自海上</p>
+                        <p class="ui-red">兑换码: 88888888</p>
+                        <p class="ui-gray">2999-03-01</p>
+                    </div>
+                </a></li>
+            </ul>
+
+            <ul class="ui-list arrow-right">
+                <li class="ui-item"><a href="#">订单<span class="ui-right">待付款 <span class="ui-red">11</span></span></a></li>
+            </ul>
+
+            <ul class="ui-list arrow-right">
+                <li class="ui-item"><a href="#">优惠券<span class="ui-right">23</span></a></li>
+            </ul>
+
+            <ul class="ui-list arrow-right">
+                <li class="ui-item"><a href="#">消息中心<span class="ui-right ui-red-dot"></span></a></li>
+                <li class="ui-item"><a href="#">收藏商家</a></li>
+            </ul>
+
+        </div>
+        <div class="ui-tab" id="page1-tab2" role="tabpanel">
+
+            <ul class="ui-list">
+                <li class="ui-title-item">A</li>
+                <li class="ui-item"><a href="">Amazon</a></li>
+                <li class="ui-item"><a href="">Apple</a></li>
+                <li class="ui-item"><a href="">Alibaba</a></li>
+                <li class="ui-title-item">B</li>
+                <li class="ui-item"><a href="">Baidu</a></li>
+                <li class="ui-title-item">F</li>
+                <li class="ui-item"><a href="">Facebook</a></li>
+                <li class="ui-title-item">G</li>
+                <li class="ui-item"><a href="">Google</a></li>
+                <li class="ui-title-item">M</li>
+                <li class="ui-item"><a href="">Microsoft</a></li>
+                <li class="ui-item"><a href="">Mozilla</a></li>
+                <li class="ui-title-item">Y</li>
+                <li class="ui-item"><a href="">Yahoo</a></li>
+                <li class="ui-title-item">T</li>
+                <li class="ui-item"><a href="">Tencent</a></li>
+            </ul>
+        </div>
+        <!-- /主体内容-->
+    </div>
+</div>
+
+<div id="page2" class="ui-page">
+    <div  class="js-page-content">
+
+        <h3 class="ui-caption">按钮</h3>
+        <p class="ui-panel">
+            <button class="ui-button">按钮</button>
+            <button class="ui-button ui-gray">按钮</button>
+            <button class="ui-button ui-red">按钮</button>
+            <button class="ui-button ui-green">按钮</button>
+        </p>
+
+        <h3 class="ui-caption">块级按钮</h3>
+        <p class="ui-panel">
+            <button class="ui-button ui-block">块级按钮</button>
+            <button class="ui-button ui-gray ui-block">块级按钮</button>
+            <button class="ui-button ui-red ui-block">块级按钮</button>
+            <button class="ui-button ui-green ui-block">块级按钮</button>
+        </p>
+
+        <h3 class="ui-caption">图标按钮</h3>
+        <p class="ui-panel">
+            <button class="ui-button ui-block"><span class="ion-ios7-location-outline"></span> 查看附近更多优惠</button>
+        </p>
+
+    </div>
+</div>
+
+<div id="page3" class="ui-page">
+
+    <div class="js-page-content">
+
+        <ul class="ui-groupbutton" role="tablist">
+            <li class="ui-button  js-active" data-toggle="tab" data-target="#page3-tab1" aria-controls="tab1" role="tab">Spinner</li>
+            <li class="ui-button" data-toggle="tab" data-target="#page3-tab2" aria-controls="tab2" role="tab">Carousel</li>
+            <li class="ui-button" data-toggle="tab" data-target="#page3-tab3" aria-controls="tab3" role="tab">Counter</li>
+            <li class="ui-button" data-toggle="tab" data-target="#page3-tab4" aria-controls="tab3" role="tab">Deleter</li>
+        </ul>
+
+        <div class="ui-tab js-active" id="page3-tab1" role="tabpanel">
+
+            <h3 class="ui-caption">Dark</h3>
+            <p class="ui-panel" style="position:relative; height: 50px;">
+                <span data-spinner></span>
+            </p>
+
+            <h3 class="ui-caption">Light</h3>
+            <p class="ui-panel" style="position:relative; height: 50px; background-color:rgba(0, 0, 0, 0.5)">
+                <span data-spinner data-color="0,0,0"></span>
+            </p>
+
+            <h3 class="ui-caption">Trigger</h3>
+            <p class="ui-panel">
+                <button class="ui-button" id="show-body-spinner">
+                    Show Spinner On Body
+                </button>
+
+                <button class="ui-button" id="hide-body-spinner">
+                    Hide Spinner On Body
+                </button>
+            </p>
+
+        </div>
+
+        <div class="ui-tab" id="page3-tab2" role="tabpanel">
+            <div class="ui-carousel js-slide" data-ride="carousel">
+                <ol class="ui-carousel-indicators">
+                    <li class="js-active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+                <div class="ui-carousel-inner">
+                    <div class="ui-carousel-item js-active">
+                        <img width="100%" src="http://lorempixel.com/640/300/sports/1/">
+                    </div>
+                    <div class="ui-carousel-item">
+                        <img width="100%" src="http://lorempixel.com/640/300/sports/2/">
+                    </div>
+                    <div class="ui-carousel-item">
+                        <img width="100%" src="http://lorempixel.com/640/300/sports/3/">
+                    </div>
+                    <div class="ui-carousel-item">
+                        <img width="100%" src="http://lorempixel.com/640/300/sports/4/">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui-tab" id="page3-tab3" role="tabpanel">
+            <h3 class="ui-caption">CountUp</h3>
+            <div class="ui-panel">
+                <span class="my-banner-count" data-countable data-from="0" data-to="9521">0</span>
+            </div>
+
+            <h3 class="ui-caption">CountDown</h3>
+            <div class="ui-panel">
+                <span class="my-banner-count" data-countable data-from="9521" data-to="0">9521</span>
+            </div>
+        </div>
+
+        <div class="ui-tab" id="page3-tab4" role="tabpanel">
+            <ul class="ui-list">
+                <li class="ui-title-item">待使用</li>
+                <li class="ui-item ui-ignore-space">
+                    <a class="my-deletable" href="#">
+                        <div class="my-item-left">
+                            <span class="ui-block">还剩</span>
+                            <span class="my-item-count">26</span>天
+                        </div>
+                        <div class="my-item-right">
+                            <p class="ui-no-wrap">商家名称: 上海的自来水来自海上上海的自来水来自海上</p>
+                            <p class="ui-red">兑换码: 88888888</p>
+                            <p class="ui-gray">2999-03-01</p>
+                        </div>
+                    </a>
+                    <div class="my-delete">删除</div>
+                </li>
+                <li class="ui-item ui-ignore-space"><a class="my-deletable" href="#">
+                    <div class="my-item-left">
+                        <span class="ui-block">还剩</span>
+                        <span class="my-item-count">26</span>天
+                    </div>
+                    <div class="my-item-right">
+                        <p class="ui-no-wrap">商家名称: 上海的自来水来自海上上海的自来水来自海上</p>
+                        <p class="ui-red">兑换码: 88888888</p>
+                        <p class="ui-gray">2999-03-01</p>
+                    </div>
+                </a><div class="my-delete">删除</div>
+                </li>
+                <li class="ui-item ui-ignore-space"><a class="my-deletable" href="#">
+                    <div class="my-item-left">
+                        <span class="ui-block">还剩</span>
+                        <span class="my-item-count">26</span>天
+                    </div>
+                    <div class="my-item-right">
+                        <p class="ui-no-wrap">商家名称: 上海的自来水来自海上上海的自来水来自海上</p>
+                        <p class="ui-red">兑换码: 88888888</p>
+                        <p class="ui-gray">2999-03-01</p>
+                    </div>
+                </a><div class="my-delete">删除</div>
+                </li>
+                <li class="ui-title-item">已使用</li>
+                <li class="ui-item ui-ignore-space"><a class="my-deletable" href="#">
+                    <div class="my-item-left">
+                        <span class="ui-block">已使用</span>
+                    </div>
+                    <div class="my-item-right">
+                        <p class="ui-no-wrap">商家名称: 上海的自来水来自海上上海的自来水来自海上</p>
+                        <p class="ui-red">兑换码: 88888888</p>
+                        <p class="ui-gray">2999-03-01</p>
+                    </div>
+                </a><div class="my-delete">删除</div>
+                </li>
+                <li class="ui-item ui-ignore-space"><a class="my-deletable" href="#">
+                    <div class="my-item-left">
+                        <span class="ui-block">已使用</span>
+                    </div>
+                    <div class="my-item-right">
+                        <p class="ui-no-wrap">商家名称: 上海的自来水来自海上上海的自来水来自海上</p>
+                        <p class="ui-red">兑换码: 88888888</p>
+                        <p class="ui-gray">2999-03-01</p>
+                    </div>
+                </a><div class="my-delete">删除</div></li>
+                <li class="ui-item ui-ignore-space"><a class="my-deletable" href="#">
+                    <div class="my-item-left">
+                        <span class="ui-block">已使用</span>
+                    </div>
+                    <div class="my-item-right">
+                        <p class="ui-no-wrap">商家名称: 上海的自来水来自海上上海的自来水来自海上</p>
+                        <p class="ui-red">兑换码: 88888888</p>
+                        <p class="ui-gray">2999-03-01</p>
+                    </div>
+                </a><div class="my-delete">删除</div></li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="page4" class="ui-page">
+    <div class="js-page-content">
+
+        <ul class="ui-groupbutton" role="tablist">
+            <li class="ui-button js-active" data-toggle="tab" data-target="#page4-tab1" aria-controls="tab1" role="tab">Tab</li>
+            <li class="ui-button" data-toggle="tab" data-target="#page4-tab2" aria-controls="tab2" role="tab">Notify</li>
+            <li class="ui-button" data-toggle="tab" data-target="#page4-tab3" aria-controls="tab3" role="tab">Alert</li>
+            <li class="ui-button" data-toggle="tab" data-target="#page4-tab4" aria-controls="tab4" role="tab">ActionSheet</li>
+        </ul>
+
+        <div class="ui-tab js-active" id="page4-tab1" role="tabpanel">
+
+            <h3 class="ui-caption">Blue</h3>
+            <div class="ui-panel">
+                <ul class="ui-groupbutton">
+                    <li class="ui-button js-active" data-target="#" data-toggle="tab">列表 1<span class="ui-red-counter">123</span></li>
+                    <li class="ui-button" data-target="#" data-toggle="tab">列表 2</li>
+                    <li class="ui-button" data-target="#" data-toggle="tab">列表 3<span class="ui-red-counter">2</span></li>
+                </ul>
+            </div>
+
+            <h3 class="ui-caption">Gray</h3>
+            <div class="ui-panel">
+                <ul class="ui-groupbutton ui-gray">
+                    <li class="ui-button js-active" data-target="#" data-toggle="tab">列表 1</li>
+                    <li class="ui-button" data-target="#" data-toggle="tab">列表 2</li>
+                    <li class="ui-button" data-target="#" data-toggle="tab">列表 3<span class="ui-blue-counter">1</span></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="ui-tab" id="page4-tab2" role="tabpanel">
+
+            <h3 class="ui-caption">Notify</h3>
+            <p class="ui-panel">
+                <button class="ui-button" data-toggle="dialog" data-target="#myNotify" data-type="notify" data-effect="from-top" data-cache="false">
+                    Launch notify from top
+                </button>
+
+                <button class="ui-button" data-toggle="dialog" data-target="#myNotify" data-type="notify" data-effect="drop-down" data-cache="false">
+                    Launch notify slide down
+                </button>
+            </p>
+
+        </div>
+
+        <div class="ui-tab" id="page4-tab3" role="tabpanel">
+
+            <h3 class="ui-caption">Alert</h3>
+            <p class="ui-panel">
+                <button class="ui-button" data-toggle="dialog" data-target="#myAlert" data-type="alert" data-effect="from-below" data-cache="false">
+                    Launch alert from below
+                </button>
+
+                <button class="ui-button" data-toggle="dialog" data-target="#myAlert" data-type="alert" data-effect="from-above" data-cache="false">
+                    Launch alert from above
+                </button>
+
+                <button class="ui-button" data-toggle="dialog" data-target="#myAlert" data-type="alert" data-effect="from-left" data-cache="false">
+                    Launch alert from left
+                </button>
+
+                <button class="ui-button" data-toggle="dialog" data-target="#myAlert" data-type="alert" data-effect="from-right" data-cache="false">
+                    Launch alert from right
+                </button>
+
+                <button class="ui-button" data-toggle="dialog" data-target="#myAlert" data-type="alert" data-effect="from-top" data-cache="false">
+                    Launch alert from top
+                </button>
+
+                <button class="ui-button" data-toggle="dialog" data-target="#myAlert" data-type="alert" data-effect="from-bottom" data-cache="false">
+                    Launch alert from bottom
+                </button>
+            </p>
+
+        </div>
+
+        <div class="ui-tab" id="page4-tab4" role="tabpanel">
+            <h3 class="ui-caption">Action Sheet</h3>
+            <p class="ui-panel">
+                <button class="ui-button" data-toggle="dialog" data-target="#myActionsheet" data-type="actionsheet" data-effect="from-bottom" data-cache="false">
+                    Launch actionsheet from bottom
+                </button>
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<div id="page5" class="ui-page">
+    <div class="js-page-content">
+
+        <ul class="ui-groupbutton" role="tablist">
+            <li class="ui-button js-active" data-toggle="tab" data-target="#page5-tab1" aria-controls="tab1" role="tab">SearchBar</li>
+            <li class="ui-button" data-toggle="tab" data-target="#page5-tab2" aria-controls="tab2" role="tab">LazyLoad</li>
+        </ul>
+
+        <div class="ui-tab js-active" id="page5-tab1" role="tabpanel">
+            <h3 class="ui-caption">Normal</h3>
+            <div class="ui-panel">
+                <div class="ui-search">
+                    <form class="ui-search-form">
+                        <input type="search" class="ui-search-input">
+                        <span class="ui-search-placeholder">搜索</span>
+                        <span class="ui-search-reset">x</span>
+                        <span class="ui-search-cancel">取消</span>
+                    </form>
+                </div>
+            </div>
+            <h3 class="ui-caption">Focus</h3>
+            <div class="ui-panel">
+                <div class="ui-search js-focus">
+                    <form class="ui-search-form">
+                        <input type="search" class="ui-search-input">
+                        <span class="ui-search-placeholder">搜索</span>
+                        <span class="ui-search-reset">x</span>
+                        <span class="ui-search-cancel">取消</span>
+                    </form>
+                </div>
+            </div>
+
+            <h3 class="ui-caption">Input</h3>
+            <div class="ui-panel">
+                <div class="ui-search js-focus js-input">
+                    <form class="ui-search-form">
+                        <input type="search" class="ui-search-input">
+                        <span class="ui-search-placeholder">搜索</span>
+                        <span class="ui-search-reset">x</span>
+                        <span class="ui-search-cancel">取消</span>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui-tab" id="page5-tab2" role="tabpanel">
+
+            <h3 class="ui-caption">Nature</h3>
+            <img data-lazy="http://lorempixel.com/400/200/nature/1/">
+            <img data-lazy="http://lorempixel.com/400/200/nature/2/">
+            <img data-lazy="http://lorempixel.com/400/200/nature/3/">
+            <img data-lazy="http://lorempixel.com/400/200/nature/4/">
+            <img data-lazy="http://lorempixel.com/400/200/nature/5/">
+            <img data-lazy="http://lorempixel.com/400/200/nature/6/">
+            <img data-lazy="http://lorempixel.com/400/200/nature/7/">
+            <img data-lazy="http://lorempixel.com/400/200/nature/8/">
+            <img data-lazy="http://lorempixel.com/400/200/nature/9/">
+
+            <h3 class="ui-caption">Technics</h3>
+            <img data-lazy="http://lorempixel.com/400/200/technics/1/">
+            <img data-lazy="http://lorempixel.com/400/200/technics/2/">
+            <img data-lazy="http://lorempixel.com/400/200/technics/3/">
+            <img data-lazy="http://lorempixel.com/400/200/technics/4/">
+            <img data-lazy="http://lorempixel.com/400/200/technics/5/">
+            <img data-lazy="http://lorempixel.com/400/200/technics/6/">
+            <img data-lazy="http://lorempixel.com/400/200/technics/7/">
+            <img data-lazy="http://lorempixel.com/400/200/technics/8/">
+            <img data-lazy="http://lorempixel.com/400/200/technics/9/">
+        </div>
+
+    </div>
+</div>
+
+<!-- 对话类内容: 属于App级别，应在body下 -->
+
+<div id="myNotify" data-backdrop=false data-expires=2000 role="dialog" class="ui-dialog" aria-labelledby="myNotifyLable" aria-hidden="true">
+    <div class="js-dialog-content ui-notify">
+        <p id="myNotifyLable">城市定位失败</p>
+    </div>
+</div>
+
+<div id="myLoading" data-backdrop=false role="dialog" class="ui-dialog" aria-labelledby="myNotifyLable" aria-hidden="true">
+    <div class="js-dialog-content ui-notify">
+        <a data-dismiss="dialog" class="ui-pop-cancel">取消</a>
+    </div>
+</div>
+
+<div id="myAlert" role="alertdialog"  class="ui-dialog" aria-labelledby="myAlertLable" aria-hidden="true">
+    <div class="js-dialog-content ui-alert">
+        <div class="ui-alert-header"><h3 class="ui-alert-title" id="myAlertLable">Title</h3></div>
+        <div class="ui-alert-body" role="note"><p>This is a message.</p></div>
+        <div class="ui-alert-footer">
+            <button data-dismiss="dialog" class="ui-alert-button">确定</button>
+            <button data-dismiss="dialog" class="ui-alert-button">取消</button>
+        </div>
+    </div>
+</div>
+
+<div id="myActionsheet" role="dialog" class="ui-dialog" aria-labelledby="myActionsheetLable" aria-hidden="true">
+    <div class="js-dialog-content ui-actionsheet">
+        <ul>
+            <li data-dismiss="dialog">删除</li>
+            <li data-dismiss="dialog">发送</li>
+        </ul>
+        <a data-dismiss="dialog" class="ui-actionsheet-cancel">取消</a>
+    </div>
+</div>
+
+<!-- /对话类内容 -->
+
+<script data-main="js/demo" src="../vendor/requirejs/require.js"></script>
+
+</body>
+</html>
