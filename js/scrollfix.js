@@ -5,7 +5,11 @@
 define(['./os', './event'], function(){
 
     var os = $.os;
-    function scrollFix(borderHeight) {
+    function scrollFix() {
+
+        $('.js-no-bonce').on('touchmove', function(event){
+            event.preventDefault();
+        });
 
         var $page = $('.ui-page');
         var $content = $('.js-page-content', $page);
@@ -29,8 +33,9 @@ define(['./os', './event'], function(){
                 var page = event.currentTarget;
                 // TODO cache element select
                 var content = page.querySelector('.js-page-content');
-                if( content.clientHeight + borderHeight < page.clientHeight ||
-                    content.clientWidth < page.clientWidth){
+                // Offset value have include content and border
+                if( content.offsetHeight < page.clientHeight ||
+                    content.offsetWidth < page.clientWidth){
                     // your element have overflow
                     return event.preventDefault();
                 }
@@ -39,11 +44,7 @@ define(['./os', './event'], function(){
 
     // Add ScrollFix only for iOS
     if(os.ios >= 5 ) {
-        $('.js-no-bonce').on('touchmove', function(event){
-            event.preventDefault();
-        });
-        // TODO: remove hard code
-        scrollFix(50*2);
+        scrollFix();
     }else{
         var html = document.documentElement;
         html.className = html.className + ' ' + 'js-no-overflow-scrolling';
