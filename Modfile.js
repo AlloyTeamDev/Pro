@@ -20,26 +20,26 @@ module.exports = {
                 dest: "js/"
             },
             zepto: {
-                src: "http://raw.github.com/madrobby/zepto/master/src/zepto.js"
+                src: "http://rawgithub.com/madrobby/zepto/master/src/zepto.js"
             },
             event: {
-                src: "http://raw.github.com/madrobby/zepto/master/src/event.js"
+                src: "http://rawgithub.com/madrobby/zepto/master/src/event.js"
             },
             ajax: {
-                src: "http://raw.github.com/madrobby/zepto/master/src/ajax.js"
+                src: "http://rawgithub.com/madrobby/zepto/master/src/ajax.js"
             },
             data: {
-                src: "http://raw.github.com/madrobby/zepto/master/src/data.js"
+                src: "http://rawgithub.com/madrobby/zepto/master/src/data.js"
             },
             touch: {
-                src: "http://raw.github.com/madrobby/zepto/master/src/touch.js"
+                src: "http://rawgithub.com/madrobby/zepto/master/src/touch.js"
             },
             requirejs: {
                 src: "http://requirejs.org/docs/release/2.1.10/comments/require.js",
                 dest: 'vendor/requirejs/'
             },
             'requirejs-tmpl': {
-                src: "https://raw.github.com/modulejs/requirejs-tmpl/master/tmpl.js"
+                src: "http://rawgithub.com/modulejs/requirejs-tmpl/master/tmpl.js"
             }
         },
         amdify: {
