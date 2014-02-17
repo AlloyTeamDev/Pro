@@ -17,7 +17,7 @@ define(['./os'], function(){
     function scrollFix() {
 
         var container = document.querySelector('.ui-page');
-        var content = document.querySelector('.js-page-content');
+        var content = container.querySelector('.js-page-content');
 
         if(!content || !container) return;
 
