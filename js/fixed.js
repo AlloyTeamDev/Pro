@@ -47,5 +47,3 @@ define(['./os', './event'], function(){
 
     // TODO: how to disable emulate fixed
 });
-
-

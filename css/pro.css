@@ -119,7 +119,7 @@ ol, ul  {
 
 .ui-page {
     display: none;
-
+    /* TODO: Why page is absolute? performance mater */
     position: absolute;
     top: 0;
     left: 0;
@@ -1087,4 +1087,3 @@ ol, ul  {
     -webkit-transform: rotateX(-90deg);
     transform: rotateX(-90deg);
 }
-

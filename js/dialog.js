@@ -196,4 +196,4 @@ define(['./os', './event', './data', './touch', './transition', './fixed'], func
         $target.dialog(option, this)
     })
 
-})
+});

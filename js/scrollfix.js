@@ -49,4 +49,4 @@ define(['./os', './event'], function(){
         var html = document.documentElement;
         html.className = html.className + ' ' + 'js-no-overflow-scrolling';
     }
-})
+});

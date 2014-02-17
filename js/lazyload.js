@@ -138,4 +138,4 @@ define(['./debounce', './event'], function () {
 
         return data;
     };
-})
+});

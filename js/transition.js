@@ -29,4 +29,4 @@ define(['./zepto'], function(){
 
     $.support.transition = transitionEnd()
 
-})
+});

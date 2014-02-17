@@ -29,4 +29,5 @@ define(function(){
                 clearTimeout(id);
             };
     }());
-})
+});
+
