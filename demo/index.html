@@ -91,13 +91,6 @@
 </head>
 <body class="ui-app">
 
-<!-- 一个App只存在一个头部与尾部 -->
-<div class="ui-top-bar js-no-bounce">
-    <!-- 头部内容 -->
-    <header class="my-header">PRO DEMO</header>
-    <!-- /头部内容-->
-</div>
-
 <div class="ui-bottom-bar js-no-bounce" role="toolbar" tabindex="0">
     <!-- 尾部内容 -->
     <button class="ui-bottom-bar-button js-active" data-toggle="tab" data-target="#page1">
@@ -125,12 +118,16 @@
 
 <!-- 一个App可以多个page -->
 <div id="page1" class="ui-page js-active">
-    <div class="js-page-content">
-        <!-- 主体内容 -->
+
+    <div class="ui-top-bar js-no-bounce">
         <ul class="ui-groupbutton" role="tablist">
             <li class="ui-button js-active" data-toggle="tab" data-target="#page1-tab1" aria-controls="tab1" role="tab">列表1</li>
             <li class="ui-button" data-toggle="tab" data-target="#page1-tab2" aria-controls="tab2" role="tab">列表2<span class="ui-red-counter">123</span></li>
         </ul>
+    </div>
+
+    <div class="js-page-content">
+        <!-- 主体内容 -->
 
         <div class="ui-tab js-active" id="page1-tab1" role="tabpanel">
 
@@ -196,6 +193,7 @@
 </div>
 
 <div id="page2" class="ui-page">
+
     <div  class="js-page-content">
 
         <h3 class="ui-caption">按钮</h3>
@@ -224,14 +222,16 @@
 
 <div id="page3" class="ui-page">
 
-    <div class="js-page-content">
-
+    <div class="ui-top-bar js-no-bounce">
         <ul class="ui-groupbutton" role="tablist">
             <li class="ui-button  js-active" data-toggle="tab" data-target="#page3-tab1" aria-controls="tab1" role="tab">Spinner</li>
             <li class="ui-button" data-toggle="tab" data-target="#page3-tab2" aria-controls="tab2" role="tab">Carousel</li>
             <li class="ui-button" data-toggle="tab" data-target="#page3-tab3" aria-controls="tab3" role="tab">Counter</li>
             <li class="ui-button" data-toggle="tab" data-target="#page3-tab4" aria-controls="tab3" role="tab">Deleter</li>
         </ul>
+    </div>
+
+    <div class="js-page-content">
 
         <div class="ui-tab js-active" id="page3-tab1" role="tabpanel">
 
@@ -376,14 +376,17 @@
 </div>
 
 <div id="page4" class="ui-page">
-    <div class="js-page-content">
 
+    <div class="ui-top-bar js-no-bounce">
         <ul class="ui-groupbutton" role="tablist">
             <li class="ui-button js-active" data-toggle="tab" data-target="#page4-tab1" aria-controls="tab1" role="tab">Tab</li>
             <li class="ui-button" data-toggle="tab" data-target="#page4-tab2" aria-controls="tab2" role="tab">Notify</li>
             <li class="ui-button" data-toggle="tab" data-target="#page4-tab3" aria-controls="tab3" role="tab">Alert</li>
             <li class="ui-button" data-toggle="tab" data-target="#page4-tab4" aria-controls="tab4" role="tab">ActionSheet</li>
         </ul>
+    </div>
+
+    <div class="js-page-content">
 
         <div class="ui-tab js-active" id="page4-tab1" role="tabpanel">
 
@@ -466,12 +469,15 @@
 </div>
 
 <div id="page5" class="ui-page">
-    <div class="js-page-content">
 
+    <div class="ui-top-bar js-no-bounce">
         <ul class="ui-groupbutton" role="tablist">
             <li class="ui-button js-active" data-toggle="tab" data-target="#page5-tab1" aria-controls="tab1" role="tab">SearchBar</li>
             <li class="ui-button" data-toggle="tab" data-target="#page5-tab2" aria-controls="tab2" role="tab">LazyLoad</li>
         </ul>
+    </div>
+
+    <div class="js-page-content">
 
         <div class="ui-tab js-active" id="page5-tab1" role="tabpanel">
             <h3 class="ui-caption">Normal</h3>
@@ -538,7 +544,7 @@
     </div>
 </div>
 
-<!-- 对话类内容: 属于App级别，应在body下 -->
+<!-- 对话类内容: 属于App级别，应在App节点下 -->
 
 <div id="myNotify" data-backdrop=false data-expires=2000 role="dialog" class="ui-dialog" aria-labelledby="myNotifyLable" aria-hidden="true">
     <div class="js-dialog-content ui-notify">

@@ -105,12 +105,14 @@ ol, ul  {
     background-position: top left;
 }
 
-.ui-bottom-bar ~ .ui-page > .js-page-content{
+/* Bottom-bar can under app or page node */
+.ui-bottom-bar ~ .ui-page > .js-page-content, .ui-bottom-bar >  .js-page-content{
     /*margin-bottom: 50px;*/
     border-bottom: 50px solid transparent;
 }
 
-.ui-top-bar ~ .ui-page > .js-page-content {
+/* Top-bar can under app or page node */
+.ui-top-bar ~ .ui-page > .js-page-content, .ui-top-bar >  .js-page-content{
     /*margin-top: 50px;*/
     border-top: 50px solid transparent;
 }
