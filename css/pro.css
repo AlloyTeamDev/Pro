@@ -105,14 +105,14 @@ ol, ul  {
     background-position: top left;
 }
 
-/* Bottom-bar can under app or page node */
-.ui-bottom-bar ~ .ui-page > .js-page-content, .ui-bottom-bar ~ .js-page-content{
+/* Bottom-bar under the app node */
+.ui-bottom-bar ~ .ui-page > .js-page-content {
     /*margin-bottom: 50px;*/
     border-bottom: 50px solid transparent;
 }
 
-/* Top-bar can under app or page node */
-.ui-top-bar ~ .ui-page > .js-page-content, .ui-top-bar ~ .js-page-content{
+/* Top-bar under the app node */
+.ui-top-bar ~ .ui-page > .js-page-content {
     /*margin-top: 50px;*/
     border-top: 50px solid transparent;
 }
@@ -675,6 +675,11 @@ ol, ul  {
 /* Tab */
 
 .ui-tab {
+    /*  Need a flex value when tab under the top-bar */
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+
     display: none;
 }
 

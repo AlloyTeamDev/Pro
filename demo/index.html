@@ -9,15 +9,6 @@
     <link rel="stylesheet" type="text/css" href="../css/pro.css?embed" />
     <link rel="stylesheet" type="text/css" href="./vendor/ionicons/css/ionicons.css" />
     <style>
-        .my-header {
-            color: #6F6F74;
-            text-align: center;
-            line-height: 50px;
-
-            -webkit-box-flex: 1;
-            -webkit-flex: 1;
-            flex: 1;
-        }
         .my-banner {
             margin-bottom: 20px;
             padding: 10px 12px;
@@ -91,25 +82,62 @@
 </head>
 <body class="ui-app">
 
+<div class="ui-top-bar js-no-bounce">
+    <div class="ui-tab page1 js-active">
+        <ul class="ui-groupbutton" role="tablist">
+            <li class="ui-button js-active" data-toggle="tab" data-target="#page1-tab1" aria-controls="tab1" role="tab">列表1</li>
+            <li class="ui-button" data-toggle="tab" data-target="#page1-tab2" aria-controls="tab2" role="tab">列表2<span class="ui-red-counter">123</span></li>
+        </ul>
+    </div>
+    <div class="ui-tab page2">
+        <ul class="ui-groupbutton" role="tablist">
+            <li class="ui-button js-active" data-toggle="tab" data-target="#page2-tab1" aria-controls="tab1" role="tab">按钮</li>
+            <li class="ui-button" data-toggle="tab" data-target="#page2-tab2" aria-controls="tab2" role="tab">图标按钮</li>
+        </ul>
+    </div>
+    <div class="ui-tab page3">
+        <ul class="ui-groupbutton" role="tablist">
+            <li class="ui-button  js-active" data-toggle="tab" data-target="#page3-tab1" aria-controls="tab1" role="tab">Spinner</li>
+            <li class="ui-button" data-toggle="tab" data-target="#page3-tab2" aria-controls="tab2" role="tab">Carousel</li>
+            <li class="ui-button" data-toggle="tab" data-target="#page3-tab3" aria-controls="tab3" role="tab">Counter</li>
+            <li class="ui-button" data-toggle="tab" data-target="#page3-tab4" aria-controls="tab4" role="tab">Deleter</li>
+        </ul>
+    </div>
+    <div class="ui-tab page4">
+        <ul class="ui-groupbutton" role="tablist">
+            <li class="ui-button js-active" data-toggle="tab" data-target="#page4-tab1" aria-controls="tab1" role="tab">Tab</li>
+            <li class="ui-button" data-toggle="tab" data-target="#page4-tab2" aria-controls="tab2" role="tab">Notify</li>
+            <li class="ui-button" data-toggle="tab" data-target="#page4-tab3" aria-controls="tab3" role="tab">Alert</li>
+            <li class="ui-button" data-toggle="tab" data-target="#page4-tab4" aria-controls="tab4" role="tab">ActionSheet</li>
+        </ul>
+    </div>
+    <div class="ui-tab page5">
+        <ul class="ui-groupbutton" role="tablist">
+            <li class="ui-button js-active" data-toggle="tab" data-target="#page5-tab1" aria-controls="tab1" role="tab">SearchBar</li>
+            <li class="ui-button" data-toggle="tab" data-target="#page5-tab2" aria-controls="tab2" role="tab">LazyLoad</li>
+        </ul>
+    </div>
+</div>
+
 <div class="ui-bottom-bar js-no-bounce" role="toolbar" tabindex="0">
     <!-- 尾部内容 -->
-    <button class="ui-bottom-bar-button js-active" data-toggle="tab" data-target="#page1">
+    <button class="ui-bottom-bar-button js-active" data-toggle="tab" data-target=".page1">
         <span class="ui-icon ion-ios7-camera-outline"></span>
         <span class="ui-label">CSS</span>
     </button>
-    <button class="ui-bottom-bar-button" data-toggle="tab" data-target="#page2">
+    <button class="ui-bottom-bar-button" data-toggle="tab" data-target=".page2">
         <span class="ui-icon ion-ios7-stopwatch-outline"></span>
         <span class="ui-label">CSS</span>
     </button>
-    <button class="ui-bottom-bar-button" data-toggle="tab" data-target="#page3">
+    <button class="ui-bottom-bar-button" data-toggle="tab" data-target=".page3">
         <span class="ui-icon ion-ios7-star-outline"></span>
         <span class="ui-label">JS</span>
     </button>
-    <button class="ui-bottom-bar-button" data-toggle="tab" data-target="#page4">
+    <button class="ui-bottom-bar-button" data-toggle="tab" data-target=".page4">
         <span class="ui-icon ion-ios7-gear-outline"></span>
         <span class="ui-label">JS</span>
     </button>
-    <button class="ui-bottom-bar-button" data-toggle="tab" data-target="#page5">
+    <button class="ui-bottom-bar-button" data-toggle="tab" data-target=".page5">
         <span class="ui-icon ion-ios7-bell-outline"></span>
         <span class="ui-label">JS</span>
     </button>
@@ -117,14 +145,7 @@
 </div>
 
 <!-- 一个App可以多个page -->
-<div id="page1" class="ui-page js-active">
-
-    <div class="ui-top-bar js-no-bounce">
-        <ul class="ui-groupbutton" role="tablist">
-            <li class="ui-button js-active" data-toggle="tab" data-target="#page1-tab1" aria-controls="tab1" role="tab">列表1</li>
-            <li class="ui-button" data-toggle="tab" data-target="#page1-tab2" aria-controls="tab2" role="tab">列表2<span class="ui-red-counter">123</span></li>
-        </ul>
-    </div>
+<div class="ui-page page1 js-active">
 
     <div class="js-page-content">
         <!-- 主体内容 -->
@@ -192,44 +213,40 @@
     </div>
 </div>
 
-<div id="page2" class="ui-page">
+<div class="ui-page page2">
 
-    <div  class="js-page-content">
+    <div class="js-page-content">
+        <div class="ui-tab js-active" id="page2-tab1" role="tabpanel">
+            <h3 class="ui-caption">按钮</h3>
+            <p class="ui-panel">
+                <button class="ui-button">按钮</button>
+                <button class="ui-button ui-gray">按钮</button>
+                <button class="ui-button ui-red">按钮</button>
+                <button class="ui-button ui-green">按钮</button>
+            </p>
 
-        <h3 class="ui-caption">按钮</h3>
-        <p class="ui-panel">
-            <button class="ui-button">按钮</button>
-            <button class="ui-button ui-gray">按钮</button>
-            <button class="ui-button ui-red">按钮</button>
-            <button class="ui-button ui-green">按钮</button>
-        </p>
+            <h3 class="ui-caption">块级按钮</h3>
+            <p class="ui-panel">
+                <button class="ui-button ui-block">块级按钮</button>
+                <button class="ui-button ui-gray ui-block">块级按钮</button>
+                <button class="ui-button ui-red ui-block">块级按钮</button>
+                <button class="ui-button ui-green ui-block">块级按钮</button>
+            </p>
+        </div>
 
-        <h3 class="ui-caption">块级按钮</h3>
-        <p class="ui-panel">
-            <button class="ui-button ui-block">块级按钮</button>
-            <button class="ui-button ui-gray ui-block">块级按钮</button>
-            <button class="ui-button ui-red ui-block">块级按钮</button>
-            <button class="ui-button ui-green ui-block">块级按钮</button>
-        </p>
-
-        <h3 class="ui-caption">图标按钮</h3>
-        <p class="ui-panel">
-            <button class="ui-button ui-block"><span class="ion-ios7-location-outline"></span> 查看附近更多优惠</button>
-        </p>
+        <div class="ui-tab" id="page2-tab2" role="tabpanel">
+            <h3 class="ui-caption">图标按钮</h3>
+            <p class="ui-panel">
+                <button class="ui-button ui-block">查看附近 <span class="ion-ios7-location-outline"></span></button>
+                <button class="ui-button ui-block">语音搜索 <span class="ion-ios7-mic-outline"></span></button>
+                <button class="ui-button ui-block">下载应用 <span class="ion-ios7-cloud-download-outline"></span></button>
+            </p>
+        </div>
 
     </div>
 </div>
 
-<div id="page3" class="ui-page">
-
-    <div class="ui-top-bar js-no-bounce">
-        <ul class="ui-groupbutton" role="tablist">
-            <li class="ui-button  js-active" data-toggle="tab" data-target="#page3-tab1" aria-controls="tab1" role="tab">Spinner</li>
-            <li class="ui-button" data-toggle="tab" data-target="#page3-tab2" aria-controls="tab2" role="tab">Carousel</li>
-            <li class="ui-button" data-toggle="tab" data-target="#page3-tab3" aria-controls="tab3" role="tab">Counter</li>
-            <li class="ui-button" data-toggle="tab" data-target="#page3-tab4" aria-controls="tab3" role="tab">Deleter</li>
-        </ul>
-    </div>
+<div class="ui-page page3">
 
     <div class="js-page-content">
 
@@ -375,16 +392,7 @@
 
 </div>
 
-<div id="page4" class="ui-page">
-
-    <div class="ui-top-bar js-no-bounce">
-        <ul class="ui-groupbutton" role="tablist">
-            <li class="ui-button js-active" data-toggle="tab" data-target="#page4-tab1" aria-controls="tab1" role="tab">Tab</li>
-            <li class="ui-button" data-toggle="tab" data-target="#page4-tab2" aria-controls="tab2" role="tab">Notify</li>
-            <li class="ui-button" data-toggle="tab" data-target="#page4-tab3" aria-controls="tab3" role="tab">Alert</li>
-            <li class="ui-button" data-toggle="tab" data-target="#page4-tab4" aria-controls="tab4" role="tab">ActionSheet</li>
-        </ul>
-    </div>
+<div class="ui-page page4">
 
     <div class="js-page-content">
 
@@ -468,14 +476,8 @@
     </div>
 </div>
 
-<div id="page5" class="ui-page">
 
-    <div class="ui-top-bar js-no-bounce">
-        <ul class="ui-groupbutton" role="tablist">
-            <li class="ui-button js-active" data-toggle="tab" data-target="#page5-tab1" aria-controls="tab1" role="tab">SearchBar</li>
-            <li class="ui-button" data-toggle="tab" data-target="#page5-tab2" aria-controls="tab2" role="tab">LazyLoad</li>
-        </ul>
-    </div>
+<div class="ui-page page5">
 
     <div class="js-page-content">
 
