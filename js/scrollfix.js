@@ -14,7 +14,7 @@
 define(['./os'], function(){
 
     var os = $.os;
-    function scrollFix() {
+    function scrollFix(borderHeight) {
 
         var container = document.querySelector('.ui-page');
         var content = container.querySelector('.js-page-content');
@@ -37,7 +37,7 @@ define(['./os'], function(){
         }, false);
 
         document.addEventListener('touchmove', function(event) {
-            if( content.clientHeight < container.clientHeight ||
+            if( content.clientHeight + borderHeight < container.clientHeight ||
                 content.clientWidth < container.clientWidth){
                 // your element have overflow
                 return event.preventDefault();
@@ -57,7 +57,8 @@ define(['./os'], function(){
 
     // Add ScrollFix only with iOS
     if(os.ios >= 5 ) {
-        scrollFix();
+        // TODO: remove hard code
+        scrollFix(50*2);
     }else{
         var html = document.documentElement;
         html.className = html.className + ' ' + 'js-no-overflow-scrolling';
