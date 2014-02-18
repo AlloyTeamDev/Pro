@@ -70,7 +70,9 @@ ol, ul  {
 
 .ui-app * {
     -webkit-touch-callout: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent; /* For some android devices */
 
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -555,8 +557,9 @@ ol, ul  {
     background: #D5D5D5;
     padding:6px 8px;
     box-shadow: 0 1px rgba(0, 0, 0, 0.07), 0 1px 1px rgba(0, 0, 0, 0.05);
-    position: relative;
 
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .ui-search-form {
@@ -564,7 +567,20 @@ ol, ul  {
     width: 100%;
     display: block;
     border-radius: 4px;
-    padding: 0 0 0 24px;
+    padding: 0 0 0 18px;
+}
+
+.ui-search-form:before {
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+
+    background: url(../img/icon-search.png?embed) no-repeat;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    content: "";
 }
 
 .ui-search-input {
@@ -589,36 +605,12 @@ ol, ul  {
 
 }
 
-.ui-search-placeholder {
-    display: block;
-    vertical-align: top;
-    font-size: 14px;
-    line-height: 16px;
-    color: #C8C8C8;
-    vertical-align: top;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate3d(-50%, -50%, 0);
-    transform: translate3d(-50%, -50%, 0);
-
-    -webkit-transition: 300ms;
-    transition: 300ms;
+.ui-search-input::-webkit-input-placeholder{
+    padding-top: 2px;
 }
 
-.ui-search-placeholder:before {
-    display: block;
-    position: relative;
-    float: left;
-    top: 0;
-    margin-right: 6px;
-
-    background: url(../img/icon-search.png?embed) no-repeat;
-    background-size: 16px;
-    width: 16px;
-    height: 16px;
-    content: "";
+.ui-search-input::-webkit-search-cancel-button {
+    display: none;
 }
 
 .ui-search-cancel {
@@ -650,12 +642,8 @@ ol, ul  {
     width: 14px;
     height: 14px;
     font-size: 14px;
-    line-height: 12px;
+    line-height: 10px;
     text-align: center;
-}
-
-.ui-search.js-focus .ui-search-placeholder {
-    left: 40px;
 }
 
 .ui-search.js-focus .ui-search-cancel {
@@ -664,10 +652,6 @@ ol, ul  {
 
 .ui-search.js-focus .ui-search-form {
     width: 86%;
-}
-
-.ui-search.js-input .ui-search-placeholder {
-    color: transparent;
 }
 
 /* TODO: reset button */

@@ -25,6 +25,34 @@ require([
         $('body').spinner('hide');
     });
 
+    function initSearch(){
+        var $search = $('#my-search');
+        var $input = $('#my-search-input');
+        $input.on('focus', function(){
+            $search.addClass('js-focus')
+        }).on('input', function(){
+                if($input[0].value){
+                    $search.addClass('js-input')
+                }else{
+                    $search.removeClass('js-input')
+                }
+            });
+
+        $('#my-search-reset').on('tap', function(){
+            $input[0].value = '';
+            $search.removeClass('js-input');
+            $input[0].focus();
+        });
+
+        $('#my-search-cancel').on('tap', function(){
+            $input[0].value = '';
+            $search.removeClass('js-input');
+            $search.removeClass('js-focus')
+        });
+    }
+
+    initSearch();
+
     // Tab
     $('[data-toggle="tab"]').on('shown:tab', function (e) {
 
