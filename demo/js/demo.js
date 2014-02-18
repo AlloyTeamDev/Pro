@@ -47,7 +47,10 @@ require([
         $('#my-search-cancel').on('tap', function(){
             $input[0].value = '';
             $search.removeClass('js-input');
-            $search.removeClass('js-focus')
+            $search.removeClass('js-focus');
+
+            document.activeElement.blur();
+            $input[0].blur();
         });
     }
 
