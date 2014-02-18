@@ -605,13 +605,13 @@ ol, ul  {
     display: block;
     position: relative;
     float: left;
-    top: 2px;
+    top: 0;
     margin-right: 6px;
 
     background: url(../img/icon-search.png?embed) no-repeat;
-    background-size: 14px;
-    width: 14px;
-    height: 14px;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
     content: "";
 }
 
@@ -644,9 +644,8 @@ ol, ul  {
     width: 14px;
     height: 14px;
     font-size: 14px;
-    line-height: 14px;
+    line-height: 12px;
     text-align: center;
-    vertical-align: top;
 }
 
 .ui-search.js-focus .ui-search-placeholder {
