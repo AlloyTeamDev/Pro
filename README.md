@@ -5,6 +5,7 @@ Pro
 ## Features
 * Mobile Only
 * High performance
+* Accessibility Support
 * Custom build support
 
 ## Demo
@@ -54,7 +55,6 @@ Copy the HTML below to begin working with a minimal PRO document.
   </body>
 </html>
 ```
-
 ## Platform support
 
 Current version have been tested on the below platforms:
@@ -71,3 +71,8 @@ Current version have been tested on the below platforms:
     * Android 4.2 (Sony Xperia Z)
     * Android 4.3 (Nexus 4)
     * Android 4.4 (Nexus 4)
+
+
+## Built with Pro
+
+ * Mobile QQ
