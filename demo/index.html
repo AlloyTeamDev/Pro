@@ -119,28 +119,28 @@
     </div>
 </div>
 
-<div class="ui-bottom-bar js-no-bounce" role="toolbar" tabindex="0">
+<div class="ui-bottom-bar js-no-bounce" role="toolbar"> <!-- tabindex="0" 在android上会触发一个高亮边框 -->
     <!-- 尾部内容 -->
-    <button class="ui-bottom-bar-button js-active" data-toggle="tab" data-target=".page1">
+    <a class="ui-bottom-bar-button js-active" role="button" data-toggle="tab" data-target=".page1">
         <span class="ui-icon ion-ios7-camera-outline"></span>
         <span class="ui-label">CSS</span>
-    </button>
-    <button class="ui-bottom-bar-button" data-toggle="tab" data-target=".page2">
+    </a>
+    <a class="ui-bottom-bar-button" role="button" data-toggle="tab" data-target=".page2">
         <span class="ui-icon ion-ios7-stopwatch-outline"></span>
         <span class="ui-label">CSS</span>
-    </button>
-    <button class="ui-bottom-bar-button" data-toggle="tab" data-target=".page3">
+    </a>
+    <a class="ui-bottom-bar-button" role="button" data-toggle="tab" data-target=".page3">
         <span class="ui-icon ion-ios7-star-outline"></span>
         <span class="ui-label">JS</span>
-    </button>
-    <button class="ui-bottom-bar-button" data-toggle="tab" data-target=".page4">
+    </a>
+    <a class="ui-bottom-bar-button" role="button" data-toggle="tab" data-target=".page4">
         <span class="ui-icon ion-ios7-gear-outline"></span>
         <span class="ui-label">JS</span>
-    </button>
-    <button class="ui-bottom-bar-button" data-toggle="tab" data-target=".page5">
+    </a>
+    <a class="ui-bottom-bar-button" role="button" data-toggle="tab" data-target=".page5">
         <span class="ui-icon ion-ios7-bell-outline"></span>
         <span class="ui-label">JS</span>
-    </button>
+    </a>
     <!-- /尾部内容-->
 </div>
 
