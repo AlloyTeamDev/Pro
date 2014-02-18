@@ -7,13 +7,7 @@ module.exports = {
     },
     tasks: {
         server: {
-            port: 80,
-            proxies: [
-                {
-                    location: "/demo/",
-                    alias: "./"
-                }
-            ]
+            port: 3000
         },
         download: {
             options: {
