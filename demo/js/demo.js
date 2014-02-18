@@ -57,7 +57,7 @@ require([
 
         }else if(tab == 'lazyload'){
             $('[data-lazy]').lazyload({
-                container: $('#page5')
+                container: $('#page5-container')
             });
         }
 
