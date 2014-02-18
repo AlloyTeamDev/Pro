@@ -83,16 +83,18 @@ ol, ul  {
     background-color: rgb(250, 250, 250);
     background-size: 100% 1px; /* Scale image by background-size */
 
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-
     position: fixed;
     left: 0;
     right: 0;
     width: 100%;
     text-align: center;
     z-index: 3;
+}
+
+.ui-flexbox, .ui-bottom-bar {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
 }
 
 .ui-top-bar {
@@ -152,17 +154,21 @@ ol, ul  {
 .ui-bottom-bar-button {
     border: none;
     outline: none;
-    display: inline-block;
-    /*max-width: 60px;*/
+
     padding: 2px 0;
     background-color: transparent;
     color: rgb(111, 111, 116);
 
+    text-align: center;
+}
+
+.ui-flex-1, .ui-bottom-bar-button {
+    /* Hack flex box not work on some android devices like Xiaomi 2 */
+    display: block;
+    /* Avoid use margin under the flex box element */
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     flex: 1;
-
-    text-align: center;
 }
 
 .ui-bottom-bar-button .ui-icon {
@@ -172,14 +178,14 @@ ol, ul  {
     color: rgb(111, 111, 116);
     font-size: 24px;
     text-align: center;
-    margin: 2px 0;
+    padding: 2px 0;
 }
 
 .ui-bottom-bar-button .ui-label {
     display: block;
     font-size: 12px;
     line-height: 12px;
-    margin: 2px 0;
+    padding: 2px 0;
 }
 
 .ui-bottom-bar-button.js-active {
@@ -674,11 +680,6 @@ ol, ul  {
 /* Tab */
 
 .ui-tab {
-    /*  Need a flex value when tab under the top-bar */
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    flex: 1;
-
     display: none;
 }
 
