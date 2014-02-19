@@ -91,6 +91,8 @@ ol, ul  {
     width: 100%;
     text-align: center;
     z-index: 3;
+
+    height: 48px;
 }
 
 .ui-flexbox, .ui-bottom-bar {
@@ -112,13 +114,13 @@ ol, ul  {
 /* Bottom-bar under the app node */
 .ui-bottom-bar ~ .ui-page > .js-page-content {
     /*margin-bottom: 50px;*/
-    border-bottom: 50px solid transparent;
+    border-bottom: 48px solid transparent;
 }
 
 /* Top-bar under the app node */
 .ui-top-bar ~ .ui-page > .js-page-content {
     /*margin-top: 50px;*/
-    border-top: 50px solid transparent;
+    border-top: 48px solid transparent;
 }
 
 .ui-page {
@@ -346,7 +348,7 @@ ol, ul  {
     opacity: 0.6;
 }
 
-.ui-block {
+.ui-button.ui-block {
     height: 44px;
     padding: 10px;
     font-size: 17px;
