@@ -23,11 +23,17 @@ require([
     (function main(){
         prettyPrintExample();
 
-        $(window).on('ready resize', initialize);
+        $win.on('ready resize', initialize);
 
         // TODO FingerBlast会导致checkbox无法点击
-        $(window).on('ready', function () {
+        $win.on('ready', function () {
             new FingerBlast('.iphone-content');
+        });
+
+        // Spinner
+        $doc.on('tap', '[data-toggle="spinner"]', function () {
+            var $this = $('.ui-app');
+            $this.spinner('toggle')
         });
 
     })();

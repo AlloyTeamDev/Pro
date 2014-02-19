@@ -9,16 +9,98 @@
     <link rel="stylesheet" href="../css/pro.css">
     <link rel="stylesheet" href="css/doc.css">
     <link rel="stylesheet" href="vendor/prettify/prettify.css">
+    <style>
+        .my-banner {
+            margin-bottom: 20px;
+            padding: 10px 12px;
+            background-color: #FF9937;
+            height: 85px;
+            color: #ffffff
+        }
+        .my-banner-text {
+            display: block;
+        }
+        .my-banner-count {
+            font-size: 40px;
+            -webkit-transform: translate3d(0, 0, 0);
+        }
+        .my-banner-unit {
+            font-size: 20px;
+        }
+
+        .my-item-left{
+            position: absolute;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #eee;
+            height: 60px;
+            width: 60px;
+            padding: 8px 6px;
+            font-size: 12px;
+            line-height: 12px;
+        }
+
+        .my-item-count {
+            font-size: 30px;
+            line-height: 30px;
+        }
+
+        .my-item-right {
+            margin-left: 70px;
+        }
+
+        .my-item-right p {
+            font-size: 14px;
+        }
+
+        .my-deletable {
+            z-index: 2;
+            background: #fff;
+        }
+
+        .my-delete {
+            height: 80px;
+            line-height: 80px;
+            width: 60px;
+            text-align: center;
+            position: absolute;
+            top:0;
+            right: 0;
+            background: rgb(250, 34, 34);
+            z-index: 1;
+            color: #fff;
+        }
+
+        [data-lazy] {
+            display: block;
+            margin: 10px auto;
+            height: 120px;
+            width: 240px;
+            border: 1px solid #eee;
+        }
+        /* For display example in phone */
+        .iphone .ui-dialog {
+            position: absolute;
+            overflow: hidden;
+        }
+
+        .iphone .js-backdrop {
+            position: absolute;
+        }
+
+    </style>
 </head>
 <body>
 
-<!-- Masthead & navigation -->
-<nav class="doc-outer-wrapper doc-masthead">
-    <div class="doc-inner-wrapper">
-        <ul class="doc-navigation">
+<!-- Navigation -->
+<nav class="outer-wrapper nav">
+    <div class="inner-wrapper">
+
+        <ul class="nav-list">
             <li class="nav-item"><a href="">View on Github</a></li>
         </ul>
-        <h1 class="doc-masthead-title"><span>PRO</span></h1>
+        <h1 class="nav-title"><span>PRO</span></h1>
+
     </div>
 </nav>
 
@@ -30,9 +112,9 @@
 <![endif]-->
 
 <!-- Components -->
-<section class="doc-outer-wrapper content-section section-components">
+<section class="outer-wrapper content-section section-components">
+    <div class="inner-wrapper">
 
-    <div class="doc-inner-wrapper">
         <div class="section-header">
             <h2 class="section-title">Components</h2>
 
@@ -40,56 +122,59 @@
         </div>
 
         <div class="iphone" id="buttonsInPhone">
-            <div class="iphone-content">
-                <div id="iwindow" class="ui-app">
-                    <!--TODO Init showcase -->
+            <div class="ui-app iphone-content">
+                <div id="iwindow" class="ui-page js-active">
+                    <!-- Init showcase -->
                     <h3 class="ui-caption">按钮</h3>
                     <p class="ui-panel">
                         <button class="ui-button">按钮</button>
-                        <button class="ui-button ui-gray">按钮</button>
-                        <button class="ui-button ui-red">按钮</button>
-                        <button class="ui-button ui-green">按钮</button>
+                        <button class="ui-button ui-info">按钮</button>
+                        <button class="ui-button ui-success">按钮</button>
+                        <button class="ui-button ui-danger">按钮</button>
                     </p>
 
                     <h3 class="ui-caption">块级按钮</h3>
                     <p class="ui-panel">
                         <button class="ui-button ui-block">块级按钮</button>
-                        <button class="ui-button ui-gray ui-block">块级按钮</button>
-                        <button class="ui-button ui-red ui-block">块级按钮</button>
-                        <button class="ui-button ui-green ui-block">块级按钮</button>
+                        <button class="ui-button ui-block ui-info">块级按钮</button>
+                        <button class="ui-button ui-block ui-success">块级按钮</button>
+                        <button class="ui-button ui-block ui-danger">块级按钮</button>
                     </p>
                 </div>
             </div>
         </div>
 
         <!-- Buttons -->
-        <article class="component" id="buttons">
+        <article class="component active" id="buttons">
             <h3 class="component-title">Buttons</h3>
 
             <p class="component-description">Buttons 包含三种状态：正常态、激活态、不可用态</p>
 
             <div class="component-example">
+<!-- Example code start -->
 <h3 class="ui-caption">按钮</h3>
 <p class="ui-panel">
     <button class="ui-button">按钮</button>
-    <button class="ui-button ui-gray">按钮</button>
-    <button class="ui-button ui-red">按钮</button>
-    <button class="ui-button ui-green">按钮</button>
+    <button class="ui-button ui-info">按钮</button>
+    <button class="ui-button ui-success">按钮</button>
+    <button class="ui-button ui-danger">按钮</button>
 </p>
 
 <h3 class="ui-caption">块级按钮</h3>
 <p class="ui-panel">
     <button class="ui-button ui-block">块级按钮</button>
-    <button class="ui-button ui-gray ui-block">块级按钮</button>
-    <button class="ui-button ui-red ui-block">块级按钮</button>
-    <button class="ui-button ui-green ui-block">块级按钮</button>
+    <button class="ui-button ui-block ui-info">块级按钮</button>
+    <button class="ui-button ui-block ui-success">块级按钮</button>
+    <button class="ui-button ui-block ui-danger">块级按钮</button>
 </p>
-            </div>
+<!-- Example code end -->
+        </div>
         </article>
 
-        <article class="component" id="lists">
+        <article class="component" id="list1">
             <h3 class="component-title">Lists</h3>
             <div class="component-example">
+<!-- Example code start -->
 <ul class="ui-list arrow-right">
     <li class="ui-item"><a href="#">订单<span class="ui-right">待付款 <span class="ui-red">11</span></span></a></li>
 </ul>
@@ -102,14 +187,272 @@
     <li class="ui-item"><a href="#">消息中心<span class="ui-right ui-red-dot"></span></a></li>
     <li class="ui-item"><a href="#">收藏商家</a></li>
 </ul>
+<!-- Example code end -->
             </div>
         </article>
 
+
+        <article class="component" id="list2">
+            <h3 class="component-title">Lists</h3>
+            <div class="component-example">
+<!-- Example code start -->
+<ul class="ui-list">
+    <li class="ui-title-item">A</li>
+    <li class="ui-item"><a href="">Amazon</a></li>
+    <li class="ui-item"><a href="">Apple</a></li>
+    <li class="ui-item"><a href="">Alibaba</a></li>
+    <li class="ui-title-item">B</li>
+    <li class="ui-item"><a href="">Baidu</a></li>
+    <li class="ui-title-item">F</li>
+    <li class="ui-item"><a href="">Facebook</a></li>
+    <li class="ui-title-item">G</li>
+    <li class="ui-item"><a href="">Google</a></li>
+    <li class="ui-title-item">M</li>
+    <li class="ui-item"><a href="">Microsoft</a></li>
+    <li class="ui-item"><a href="">Mozilla</a></li>
+    <li class="ui-title-item">Y</li>
+    <li class="ui-item"><a href="">Yahoo</a></li>
+    <li class="ui-title-item">T</li>
+    <li class="ui-item"><a href="">Tencent</a></li>
+</ul>
+<!-- Example code end -->
+            </div>
+        </article>
+
+        <article class="component" id="spinner">
+            <h3 class="component-title">Spinner</h3>
+            <div class="component-example">
+<!-- Example code start -->
+
+<h3 class="ui-caption">Trigger</h3>
+<p class="ui-panel">
+    <button class="ui-button ui-block" data-toggle="spinner">
+        Toggle Light Spinner
+    </button>
+    <button class="ui-button ui-block" data-toggle="spinner" data-color="0,0,0">
+        Toggle Dark Spinner
+    </button>
+</p>
+<!-- Example code end -->
+            </div>
+        </article>
+
+        <article class="component" id="carousel">
+            <h3 class="component-title">Carousel</h3>
+            <div class="component-example">
+<!-- Example code start -->
+<div class="ui-carousel js-slide" data-ride="carousel">
+    <ol class="ui-carousel-indicators">
+        <li class="js-active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+    <div class="ui-carousel-inner">
+        <div class="ui-carousel-item js-active">
+            <img width="100%" src="http://lorempixel.com/640/300/sports/1/">
+        </div>
+        <div class="ui-carousel-item">
+            <img width="100%" src="http://lorempixel.com/640/300/sports/2/">
+        </div>
+        <div class="ui-carousel-item">
+            <img width="100%" src="http://lorempixel.com/640/300/sports/3/">
+        </div>
+        <div class="ui-carousel-item">
+            <img width="100%" src="http://lorempixel.com/640/300/sports/4/">
+        </div>
+    </div>
+</div>
+<!-- Example code end -->
+            </div>
+        </article>
+
+        <article class="component" id="counter">
+            <h3 class="component-title">Counter</h3>
+            <div class="component-example">
+<!-- Example code start -->
+<h3 class="ui-caption">CountUp</h3>
+<div class="ui-panel">
+    <span class="my-banner-count" data-countable data-from="0" data-to="9521">0</span>
+</div>
+
+<h3 class="ui-caption">CountDown</h3>
+<div class="ui-panel">
+    <span class="my-banner-count" data-countable data-from="9521" data-to="0">9521</span>
+</div>
+<!-- Example code end -->
+            </div>
+        </article>
+
+        <article class="component" id="deleter">
+            <h3 class="component-title">Deleter</h3>
+            <div class="component-example">
+<!-- Example code start -->
+<ul class="ui-list">
+    <li class="ui-title-item">待使用</li>
+    <li class="ui-item ui-ignore-space">
+        <a class="my-deletable" href="#">
+            <div class="my-item-left">
+                <span class="ui-block">还剩</span>
+                <span class="my-item-count">26</span>天
+            </div>
+            <div class="my-item-right">
+                <p class="ui-no-wrap">商家名称: 上海的自来水来自海上上海的自来水来自海上</p>
+                <p class="ui-red">兑换码: 88888888</p>
+                <p class="ui-gray">2999-03-01</p>
+            </div>
+        </a>
+        <div class="my-delete">删除</div>
+    </li>
+    <li class="ui-item ui-ignore-space"><a class="my-deletable" href="#">
+        <div class="my-item-left">
+            <span class="ui-block">还剩</span>
+            <span class="my-item-count">26</span>天
+        </div>
+        <div class="my-item-right">
+            <p class="ui-no-wrap">商家名称: 上海的自来水来自海上上海的自来水来自海上</p>
+            <p class="ui-red">兑换码: 88888888</p>
+            <p class="ui-gray">2999-03-01</p>
+        </div>
+    </a><div class="my-delete">删除</div>
+    </li>
+    <li class="ui-item ui-ignore-space"><a class="my-deletable" href="#">
+        <div class="my-item-left">
+            <span class="ui-block">还剩</span>
+            <span class="my-item-count">26</span>天
+        </div>
+        <div class="my-item-right">
+            <p class="ui-no-wrap">商家名称: 上海的自来水来自海上上海的自来水来自海上</p>
+            <p class="ui-red">兑换码: 88888888</p>
+            <p class="ui-gray">2999-03-01</p>
+        </div>
+    </a><div class="my-delete">删除</div>
+    </li>
+</ul>
+<!-- Example code end -->
+            </div>
+        </article>
+
+        <article class="component" id="tab">
+            <h3 class="component-title">Tab</h3>
+            <div class="component-example">
+<!-- Example code start -->
+<h3 class="ui-caption">Blue</h3>
+<div class="ui-panel">
+    <ul class="ui-groupbutton">
+        <li class="ui-button js-active" data-target="#" data-toggle="tab">列表 1<span class="ui-red-counter">123</span></li>
+        <li class="ui-button" data-target="#" data-toggle="tab">列表 2</li>
+        <li class="ui-button" data-target="#" data-toggle="tab">列表 3<span class="ui-red-counter">2</span></li>
+    </ul>
+</div>
+
+<h3 class="ui-caption">Gray</h3>
+<div class="ui-panel">
+    <ul class="ui-groupbutton ui-gray">
+        <li class="ui-button js-active" data-target="#" data-toggle="tab">列表 1</li>
+        <li class="ui-button" data-target="#" data-toggle="tab">列表 2</li>
+        <li class="ui-button" data-target="#" data-toggle="tab">列表 3<span class="ui-blue-counter">1</span></li>
+    </ul>
+</div>
+<!-- Example code end -->
+            </div>
+        </article>
+
+        <article class="component" id="notify">
+            <h3 class="component-title">Notify</h3>
+            <div class="component-example">
+<!-- Example code start -->
+<h3 class="ui-caption">Notify</h3>
+<p class="ui-panel">
+    <button class="ui-button ui-block" data-toggle="dialog" data-target="#myNotify" data-type="notify" data-effect="from-top" data-cache="false">
+        Launch notify from top
+    </button>
+</p>
+
+<div id="myNotify" data-backdrop=false data-expires=2000 role="dialog" class="ui-dialog" aria-labelledby="myNotifyLable" aria-hidden="true">
+    <div class="js-dialog-content ui-notify">
+        <p id="myNotifyLable">城市定位失败</p>
+    </div>
+</div>
+<!-- Example code end -->
+            </div>
+        </article>
+
+        <article class="component" id="alert">
+            <h3 class="component-title">Alert</h3>
+            <div class="component-example">
+<!-- Example code start -->
+<h3 class="ui-caption">Alert</h3>
+<p class="ui-panel">
+    <button class="ui-button ui-block" data-toggle="dialog" data-target="#myAlert" data-type="alert" data-effect="from-below" data-cache="false">
+        Launch alert from below
+    </button>
+
+    <button class="ui-button ui-block" data-toggle="dialog" data-target="#myAlert" data-type="alert" data-effect="from-above" data-cache="false">
+        Launch alert from above
+    </button>
+
+    <button class="ui-button ui-block" data-toggle="dialog" data-target="#myAlert" data-type="alert" data-effect="from-left" data-cache="false">
+        Launch alert from left
+    </button>
+
+    <button class="ui-button ui-block" data-toggle="dialog" data-target="#myAlert" data-type="alert" data-effect="from-right" data-cache="false">
+        Launch alert from right
+    </button>
+
+    <button class="ui-button ui-block" data-toggle="dialog" data-target="#myAlert" data-type="alert" data-effect="from-top" data-cache="false">
+        Launch alert from top
+    </button>
+
+    <button class="ui-button ui-block" data-toggle="dialog" data-target="#myAlert" data-type="alert" data-effect="from-bottom" data-cache="false">
+        Launch alert from bottom
+    </button>
+</p>
+
+<div id="myAlert" role="alertdialog"  class="ui-dialog" aria-labelledby="myAlertLable" aria-hidden="true">
+    <div class="js-dialog-content ui-alert">
+        <div class="ui-alert-header"><h3 class="ui-alert-title" id="myAlertLable">Title</h3></div>
+        <div class="ui-alert-body" role="note"><p>This is a message.</p></div>
+        <div class="ui-alert-footer">
+            <!-- 尽量避免使用 button 元素，在小米上是会有点击高亮边框 -->
+            <a data-dismiss="dialog" role="button" class="ui-alert-button">确定</a>
+            <a data-dismiss="dialog" role="button" class="ui-alert-button">取消</a>
+        </div>
+    </div>
+</div>
+<!-- Example code end -->
+            </div>
+        </article>
+
+        <article class="component" id="actionsheet">
+            <h3 class="component-title">Action Sheet</h3>
+            <div class="component-example">
+<!-- Example code start -->
+<h3 class="ui-caption">Action Sheet</h3>
+<p class="ui-panel">
+    <button class="ui-button ui-block" data-toggle="dialog" data-target="#myActionsheet" data-type="actionsheet" data-effect="from-bottom" data-cache="false">
+        Launch actionsheet from bottom
+    </button>
+</p>
+
+<div id="myActionsheet" role="dialog" class="ui-dialog" aria-labelledby="myActionsheetLable" aria-hidden="true">
+    <div class="js-dialog-content ui-actionsheet">
+        <ul>
+            <li role="button" data-dismiss="dialog">删除</li>
+            <li role="button" data-dismiss="dialog">发送</li>
+        </ul>
+        <a role="button" data-dismiss="dialog" class="ui-actionsheet-cancel">取消</a>
+    </div>
+</div>
+<!-- Example code end -->
+            </div>
+        </article>
+        
     </div>
 </section>
 
-<div class="doc-footer">
-    <div class="doc-inner-wrapper" id="about">
+<div class="footer">
+    <div class="inner-wrapper" id="about">
         <p><a href="http://alloyteam.com">Yuanyan @ Tencent AlloyTeam </a></p>
     </div>
 </div>

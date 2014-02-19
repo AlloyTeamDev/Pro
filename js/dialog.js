@@ -132,8 +132,8 @@ define(['./os', './event', './data', './touch', './transition', './fixed'], func
         if (this.isShown && this.options.backdrop) {
             var doAnimate = $.support.transition && animate;
 
-            this.$backdrop = $('<div class="ui-backdrop ' + animate + '" />')
-                .appendTo(document.body)
+            this.$backdrop = $('<div class="js-backdrop ' + animate + '" />')
+                .appendTo(this.$element.parent())
                 .emulateFixed();
 
             this.$element.on(dismissDialogEventName, $.proxy(function (e) {

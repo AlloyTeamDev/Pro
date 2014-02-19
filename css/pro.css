@@ -125,7 +125,7 @@ ol, ul  {
 
 .ui-page {
     display: none;
-    /* TODO: Why page is absolute? performance mater */
+    /* TODO Why page is absolute? performance mater */
     position: absolute;
     top: 0;
     left: 0;
@@ -724,7 +724,7 @@ ol, ul  {
 /* /Dialog */
 
 /* Backdrop */
-.ui-backdrop {
+.js-backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -744,11 +744,11 @@ ol, ul  {
     z-index: 9999;
 }
 
-.ui-backdrop.js-effect-fade {
+.js-backdrop.js-effect-fade {
     opacity: 0;
 }
 
-.ui-backdrop.js-show {
+.js-backdrop.js-show {
     visibility: visible;
     opacity: .5;
 }
@@ -927,7 +927,7 @@ ol, ul  {
     border: 0;
     border-radius: 0 0 5px 5px;
 
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 10px;
     right: 10px;
