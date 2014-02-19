@@ -91,7 +91,7 @@ require([
 
         }else if(tab == 'lazyload'){
             $('[data-lazy]').lazyload({
-                container: $.os > 5? $('#page5-container'): window
+                container: $.os.ios > 5? $('#page5-container'): window
             });
         }
 
