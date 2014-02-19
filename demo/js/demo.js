@@ -44,13 +44,16 @@ require([
             $input[0].focus();
         });
 
-        $('#my-search-cancel').on('tap', function(){
+        $('#my-search-cancel').on('touchstart', function(evt){
             $input[0].value = '';
             $search.removeClass('js-input');
             $search.removeClass('js-focus');
 
             document.activeElement.blur();
             $input[0].blur();
+
+            evt.stopPropagation();
+            evt.preventDefault();
         });
     }
 
