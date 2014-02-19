@@ -52,7 +52,7 @@ textarea, textarea:focus {
 
 a {
     text-decoration: none;
-    color: #007AFF;
+    color: #0079FF;
 }
 
 ol, ul  {
@@ -240,7 +240,7 @@ ol, ul  {
 }
 
 .ui-gray {
-    color: #7C7B83 !important;
+    color: #808080 !important;
 }
 
 .ui-red-dot, .ui-blue-dot {
@@ -254,7 +254,7 @@ ol, ul  {
 }
 
 .ui-blue-dot {
-    background: #007AFF !important;
+    background: #0079FF !important;
 }
 
 .ui-right {
@@ -318,15 +318,13 @@ ol, ul  {
 .ui-button {
     display: inline-block;
 
-    border-radius: 4px;
-    padding: 4px;
+    border-radius: 3px;
+    padding: 6px 10px;
     margin: 4px 0;
-    border: 1px solid #007AFF;
-    min-width: 70px;
-
-    color: #007AFF;
-    font-size: 14px;
-    line-height: 28px;
+    border: 1px solid #0079FF;
+    color: #0079FF;
+    font-size: 13px;
+    line-height: 13px;
     text-align: center;
     background-color: transparent;
 
@@ -335,25 +333,58 @@ ol, ul  {
     -webkit-box-sizing: border-box;
 }
 
-.ui-button.ui-block {
+.ui-button:active {
+    color: #fff;
+    background: #0079FF;
+}
+
+.ui-button[disabled]{
+    pointer-events: none;
+    color: #a6a6a6;
+    border-color: #a6a6a6;
+    background: #fff;
+    opacity: 0.6;
+}
+
+.ui-block {
+    height: 44px;
+    padding: 10px;
+    font-size: 17px;
+    line-height: 17px;
     display: block;
     width: 100%;
 }
 
-.ui-button.ui-gray {
-    border-color: rgb(128, 128, 128);
+.ui-info {
+    color: white;
+    background: #0079FF;
+    border-color: #0079FF;
 }
 
-.ui-button.ui-green {
-    color: white !important;
+.ui-info:active {
+    opacity: 0.4;
+}
+
+.ui-success {
+    color: white;
     background: #46ca5e;
     border-color: #46ca5e;
 }
 
-.ui-button.ui-red {
-    color: white !important;
-    background: rgb(250, 60, 60);
-    border-color: rgb(250, 60, 60);
+.ui-success:active {
+    background: #46ca5e;
+    border-color: #46ca5e;
+    opacity: 0.4;
+}
+
+.ui-danger {
+     color: #fc4226;
+     border-color: #fc4226;
+}
+
+.ui-danger:active {
+    color: #fff;
+    background: #fc4226;
 }
 
 /* /Button */
@@ -371,9 +402,8 @@ ol, ul  {
 .ui-groupbutton .ui-button {
     display: table-cell;
     margin: 0;
-    padding: 0 10px;
+    min-width: 70px;
     border-width: 1px 0 1px 1px;
-    color: #007AFF;
     border-radius: 0;
     position: relative;
     float: left; /* Hack for iOS 4.3 that make position: relative work right */
@@ -383,19 +413,19 @@ ol, ul  {
     background-color: #D3E5F9;
 }
 
+.ui-groupbutton .ui-button.js-active {
+    color: #fff;
+    background: #0079FF;
+}
+
 .ui-groupbutton .ui-button:first-child {
-    border-radius: 4px 0 0 4px;
+    border-radius: 3px 0 0 3px;
     border-right-width: 0;
 }
 
 .ui-groupbutton .ui-button:last-child {
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 3px 3px 0;
     border-width: 1px;
-}
-
-.ui-groupbutton .ui-button.js-active {
-    color: #fff;
-    background: #007AFF;
 }
 
 /* Gray Style */
