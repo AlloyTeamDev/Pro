@@ -7,7 +7,7 @@ define(['./os', './event'], function(){
     var os = $.os;
     function scrollFix() {
 
-        $('.js-no-bonce').on('touchmove', function(event){
+        $('.js-no-bounce').on('touchmove', function(event){
             event.preventDefault();
         });
 
