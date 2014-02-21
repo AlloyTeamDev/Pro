@@ -12,7 +12,7 @@ define(['./os', './event'], function(){
         });
 
         var $page = $('.ui-page');
-        var $content = $('.js-page-content', $page);
+        var $content = $('.ui-page-content', $page);
         if(!$content[0] || !$page[0]) return;
 
         // Variables to track inputs
@@ -32,7 +32,7 @@ define(['./os', './event'], function(){
         }).on('touchmove', '.ui-page', function(event){
                 var page = event.currentTarget;
                 // TODO cache element select
-                var content = page.querySelector('.js-page-content');
+                var content = page.querySelector('.ui-page-content');
                 // Offset value have include content and border
                 if( content.offsetHeight < page.clientHeight ||
                     content.offsetWidth < page.clientWidth){

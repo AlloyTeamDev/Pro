@@ -112,13 +112,13 @@ ol, ul  {
 }
 
 /* Bottom-bar under the app node */
-.ui-bottom-bar ~ .ui-page > .js-page-content {
+.ui-bottom-bar ~ .ui-page > .ui-page-content {
     /*margin-bottom: 50px;*/
     border-bottom: 48px solid transparent;
 }
 
 /* Top-bar under the app node */
-.ui-top-bar ~ .ui-page > .js-page-content {
+.ui-top-bar ~ .ui-page > .ui-page-content {
     /*margin-top: 50px;*/
     border-top: 48px solid transparent;
 }
