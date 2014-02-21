@@ -45,7 +45,7 @@ Copy the HTML below to begin working with a minimal PRO document.
     </div>
 
     <div id="page1" class="ui-page js-active">
-        <div class="js-page-content">
+        <div class="ui-page-content">
              <h1>Hello, world!</h1>
         </div>
     </div>
