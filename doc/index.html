@@ -111,6 +111,95 @@
 </div>
 <![endif]-->
 
+
+<section class="outer-wrapper content-section">
+    <div class="inner-wrapper">
+        <!-- md/getting-started.md -->
+        <div class="section-header">
+            <h1 class="section-title" id="getting-started">Getting started</h1>
+            <p class="section-description">An overview of Pro, how to download and use, basic templates.</p>
+        </div>
+
+        <h1 id="download" class="article-title">Download</h1>
+
+        <p>Pro has a few easy ways to quickly get started, each one appealing to a different skill level and use case. Read through to see what suits your particular needs.</p>
+
+        <h3 id="download-pro">Download Pro</h3>
+
+        <p><a href="#" class="ui-button" role="button" onclick="">Download Pro</a> Compiled and minified CSS, JavaScript.</p>
+
+        <p><a href="#" class="ui-button" role="button" onclick="">Download Source</a> Source CSS, JavaScript.</p>
+
+        <h3 id="install-with-bower">Install with Bower</h3>
+
+        <p>Install and manage Pro’s CSS, JavaScript, using <a href="http://bower.io">Bower</a>.</p>
+
+        <pre class="prettyprint prettyprinted" style=""><code class="language-bash"><span class="pln">bower install pro</span></code></pre>
+
+        <h1 id="setup" class="article-title">Setup</h1>
+
+        <p>3 steps for structuring your Pro application</p>
+
+        <ol>
+            <li>
+                <h3 id="set-viewport-meta">Set <code>viewport</code> meta</h3>
+                <p><code>&lt;name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"&gt;</code></p>
+            </li>
+            <li>
+                <h3 id="set-fixed-bars">Set fixed bars</h3>
+                <p>All fixed bars (<code>.ui-top-bar</code>, <code>.ui-bottom-bar</code>) should always be the first thing in the body of the page. This is really important!</p>
+            </li>
+            <li>
+                <h3 id="put-content-into-ui-page">Put content into <code>.ui-page</code> </h3>
+                <p>Anything that’s not a <code>-bar</code> should be put in a div with the class <code>ui-page</code>. Put this div after the bars in the body tag.</p>
+            </li>
+        </ol>
+
+        <h1 id="basic-template" class="article-title">Basic template</h1>
+
+        <p>Start with this basic HTML template, or modify it, adapting them to suit your needs.</p>
+
+        <p>Copy the HTML below to begin working with a minimal Pro document.</p><div class="se-section-delimiter"></div>
+
+<pre class="prettyprint prettyprinted" style=""><code class="language-html"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+</span><span class="tag">&lt;head&gt;</span><span class="pln">
+    </span><span class="tag">&lt;meta</span><span class="pln"> </span><span class="atn">charset</span><span class="pun">=</span><span class="atv">'utf-8'</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;title&gt;</span><span class="pln">Pro Template</span><span class="tag">&lt;/title&gt;</span><span class="pln">
+    </span><span class="tag">&lt;meta</span><span class="pln"> </span><span class="atn">charset</span><span class="pun">=</span><span class="atv">"utf-8"</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;meta</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"viewport"</span><span class="pln"> </span><span class="atn">content</span><span class="pun">=</span><span class="atv">"width=device-width, initial-scale=1.0, user-scalable=no"</span><span class="tag">&gt;</span><span class="pln">
+
+    </span><span class="com">&lt;!-- Pro CSS --&gt;</span><span class="pln">
+    </span><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text/css"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"css/pro.css"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;/head&gt;</span><span class="pln">
+</span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"ui-app"</span><span class="tag">&gt;</span><span class="pln">
+
+    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"ui-top-bar js-no-bounce"</span><span class="tag">&gt;</span><span class="pln">
+        PRO Template
+    </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+
+    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"ui-bottom-bar js-no-bounce"</span><span class="pln"> </span><span class="atn">role</span><span class="pun">=</span><span class="atv">"toolbar"</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"0"</span><span class="tag">&gt;</span><span class="pln">
+        </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"ui-bottom-bar-button js-active"</span><span class="pln"> </span><span class="atn">data-toggle</span><span class="pun">=</span><span class="atv">"tab"</span><span class="pln"> </span><span class="atn">data-target</span><span class="pun">=</span><span class="atv">"#page1"</span><span class="tag">&gt;</span><span class="pln">
+            </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"ui-icon"</span><span class="tag">&gt;&lt;/span&gt;</span><span class="pln">
+            </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"ui-label"</span><span class="tag">&gt;</span><span class="pln">CSS</span><span class="tag">&lt;/span&gt;</span><span class="pln">
+        </span><span class="tag">&lt;/button&gt;</span><span class="pln">
+        </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+
+    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"page1"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"ui-page js-active"</span><span class="tag">&gt;</span><span class="pln">
+        </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"ui-page-content"</span><span class="tag">&gt;</span><span class="pln">
+             </span><span class="tag">&lt;h1&gt;</span><span class="pln">Hello, world!</span><span class="tag">&lt;/h1&gt;</span><span class="pln">
+        </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+
+    </span><span class="com">&lt;!-- Pro JS --&gt;</span><span class="pln">
+    </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"js/pro.js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+  </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span></code></pre>
+
+    </div>
+</section>
+
 <!-- Components -->
 <section class="outer-wrapper content-section section-components">
     <div class="inner-wrapper">
@@ -118,7 +207,7 @@
         <div class="section-header">
             <h2 class="section-title">Components</h2>
 
-            <p class="section-description"></p>
+            <p class="section-description">Bring Pro's components to life with over a dozen custom Zepto plugins. Easily include them all, or one by one.</p>
         </div>
 
         <div class="iphone" id="buttonsInPhone">

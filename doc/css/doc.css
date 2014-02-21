@@ -2,25 +2,27 @@
 -------------------------------------------------- */
 
 body {
-  position: static !important; /* Overrides the fixed positioning of body in Ratchet */
-  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #333;
-  background-color: #fff;
-  -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
-  -webkit-text-size-adjust: 100%;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+    -webkit-text-size-adjust: 100%;
+
+    /* Overrides the none user select of body in Pro */
+    -webkit-user-select: text;
 }
 
 /* Typography
 -------------------------------------------------- */
 
 hr {
-  height: 0;
-  margin: 10px 0 30px;
-  border: solid #ddd;
-  border-width: 1px 0 0;
-  clear: both;
+    height: 0;
+    margin: 10px 0 30px;
+    border: solid #ddd;
+    border-width: 1px 0 0;
+    clear: both;
 }
 
 h1,
@@ -29,8 +31,8 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
-  text-rendering: optimizeLegibility;
+    margin: 0;
+    text-rendering: optimizeLegibility;
 }
 
 b {
@@ -42,196 +44,219 @@ a {
     text-decoration: none;
 }
 
+p, pre, pre.prettyprint, blockquote {
+    margin: 0 0 15px
+}
+
+hr {
+    margin: 30px 0
+}
+
+code, pre {
+    font-family: Menlo, Consolas, "Courier New", monospace;
+    font-size: 12px !important
+}
+
 /* Doc structural styles
 -------------------------------------------------- */
 
 .outer-wrapper {
-  position: relative;
+    position: relative;
 }
 
 .inner-wrapper {
-  width: 1000px;
-  margin: 0 auto;
-  position: relative;
-  padding-top: 5px;
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 5px;
 }
 
 /* Navigation
 -------------------------------------------------- */
 
 .nav {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 100;
-  padding: 10px 0;
-  background-color: rgba(0,0,0, 1);
-  border-bottom: 1px solid #ddd;
-  box-shadow: 0 0 5px rgba(0,0,0,.1);
-  color: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    padding: 10px 0;
+    background-color: rgba(0,0,0, 1);
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0,0,0,.1);
+    color: #fff;
 }
 
 .nav .inner-wrapper {
-  line-height: 40px;
+    line-height: 40px;
 }
 
 .nav-title {
-  font-weight: 700;
-  font-size: 21px;
-  text-transform: uppercase;
-  letter-spacing: 5px;
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
 }
 
 .nav-list {
-  float: right;
-  font-size: 15px;
+    float: right;
+    font-size: 15px;
 }
 
 .nav-item {
-  position: relative;
-  float: left;
-  margin-right: 30px;
-  list-style: none;
+    position: relative;
+    float: left;
+    margin-right: 30px;
+    list-style: none;
 }
 
 .nav-item:last-child {
-  margin-right: 0;
+    margin-right: 0;
 }
 
 .nav-item a {
-  color: #fff;
-  position: relative;
-  text-decoration: none;
+    color: #fff;
+    position: relative;
+    text-decoration: none;
 }
 
 /* iPhone previewer
 -------------------------------------------------- */
 
 .iphone {
-  position: relative;
-  top: 50px;
-  float: right;
-  width: 375px;
-  height: 806px;
-  font-family: "Helvetica Neue", sans-serif;
-  background-image: url("../img/iphone.png");
+    position: relative;
+    top: 50px;
+    float: right;
+    width: 375px;
+    height: 806px;
+    font-family: "Helvetica Neue", sans-serif;
+    background-image: url("../img/iphone.png");
 }
 
 .iphone-fixed,
 .iphone-bottom {
-  left: 50%;
-  margin-left: 125px;
+    left: 50%;
+    margin-left: 125px;
 }
 
 .iphone-fixed {
-  position: fixed;
-  top: 30px;
+    position: fixed;
+    top: 30px;
 }
 
 .iphone-bottom {
-  position: absolute;
-  top: auto;
-  bottom: 130px;
+    position: absolute;
+    top: auto;
+    bottom: 130px;
 }
 
 .iphone .iphone-content {
-  position: absolute;
-  top: 147px;
-  left: 27px;
-  width: 320px;
-  height: 548px;
-  overflow: hidden;
+    position: absolute;
+    top: 147px;
+    left: 27px;
+    width: 320px;
+    height: 548px;
+    overflow: hidden;
 }
 
 .iphone .content,
 .component-example .content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .component-example .content {
-  position: relative;
+    position: relative;
 }
 
 /* Content layout
 -------------------------------------------------- */
 
 .content-section {
-  position: relative;
-  padding-top: 80px;
+    position: relative;
+    padding-top: 80px;
 }
 
 /* Section header
 -------------------------------------------------- */
 
 .section-header {
-  padding-bottom: 30px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
 
 .section-title {
-  font-size: 60px;
-  font-weight: 700;
-  line-height: 1;
-  color: #333;
+    margin: 10px 0;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 1;
+    color: #333;
 }
 
 .section-description {
-  font-weight: 300;
-  font-size: 24px;
-  color: #777;
+    margin: 10px 0;
+    font-weight: 300;
+    font-size: 24px;
+    color: #777;
 }
 
 .section-informational {
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background-color: #fafafa;
-  padding-bottom: 70px;
-  padding-top: 141px;/* 80+61 px*/
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #fafafa;
+    padding-bottom: 70px;
+    padding-top: 141px;/* 80+61 px*/
 }
 
 .section-performance {
- border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background-color: #fafafa;
-  padding-bottom: 70px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #fafafa;
+    padding-bottom: 70px;
 }
+
+.article-title {
+    margin: 30px 0 15px 0;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1;
+    color: #333;
+}
+
+
 /* Getting started & page setup
 -------------------------------------------------- */
 
 .steps {
-  overflow: hidden;
-  padding-top: 40px;
+    overflow: hidden;
+    padding-top: 40px;
 }
 
 .steps .step {
-  float: left;
-  width: 306px;
-  margin-right: 10px;
-  margin-left: 10px;
-  list-style: none;
+    float: left;
+    width: 306px;
+    margin-right: 10px;
+    margin-left: 10px;
+    list-style: none;
 }
 
 .step-title {
-  font-size: 18px;
-  font-weight: 700;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .step-description {
-  margin-left: 10px;
-  margin-bottom: 10px;
-  margin-top: 15px;
-  color: #333;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    color: #333;
 
 }
 
 .steps .step:last-child {
-  margin-right: 0;
+    margin-right: 0;
 }
 
 .steps ul{
@@ -244,76 +269,80 @@ a {
 -------------------------------------------------- */
 
 .section-components {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 .component {
-  position: relative;
-  padding-top: 80px;
-  width: 550px;
-  margin-top: 1px;
-  font-family: "proxima-nova", "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  opacity: .3; /* Fade content back until the user scrolls to it. */
-  -webkit-transition: opacity .2s ease-in-out;
+    position: relative;
+    padding-top: 80px;
+    width: 550px;
+    margin-top: 1px;
+    font-family: "proxima-nova", "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    opacity: .3; /* Fade content back until the user scrolls to it. */
+    -webkit-transition: opacity .2s ease-in-out;
 }
 
 .component:last-child {
-  margin-bottom: 320px;
+    margin-bottom: 320px;
 }
 
 /* Active class applied when the specific component is in focus */
 .component.active {
-  opacity: 1;
+    opacity: 1;
 }
 
 .component-title {
-  font-size: 28px;
-  font-weight: 300;
-  line-height: 35px;
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 35px;
 }
 
 .component-title a {
-  font-size: 16px;
-  float: right;
+    font-size: 16px;
+    float: right;
 }
 
 .component-description {
-  margin-bottom: 13px;
-  color: #777;
-  font-size: 18px;
-  line-height: 26px;
-  font-weight: 300;
+    margin-bottom: 13px;
+    color: #777;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 300;
 }
 
 .component-note {
-  margin-top: 10px;
-  color: #999;
-  font-size: 14px;
-  line-height: 18px;
-  font-style: italic;
+    margin-top: 10px;
+    color: #999;
+    font-size: 14px;
+    line-height: 18px;
+    font-style: italic;
 }
 
 .component-title + .component-example {
-  margin-top: 13px;
+    margin-top: 13px;
 }
 
 .content-section .prettyprint,
 .content-section .instruction-code {
-  margin-top: 10px;
-  padding: 10px;
-  overflow-x: auto;
-  font-size: 13px;
-  font-family: monaco, menlo, monospace;
-  color: #777;
-  background-color: #fafafa;
-  border: 1px solid #ddd;
-  border-radius: 3px;
+    overflow-x: auto;
+    font-size: 13px;
+    font-family: monaco, menlo, monospace;
+    color: #777;
+    background-color: #fafafa;
+
+    border: 0 solid rgba(102, 128, 153, 0.075);
+    border-left: 10px solid rgba(102, 128, 153, 0.075);
+    border-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 10px 15px;
+    margin: 0 0 15px;
 }
 
 .prettyprint + .component-description,
 .component-note + .component-description {
-  margin-top: 36px;
+    margin-top: 36px;
 }
 
 /* Content specific styles
@@ -321,184 +350,184 @@ a {
 
 /* Component examples on mobile */
 .component-example {
-  position: relative;
-  display: none;
-  margin-bottom: 20px;
-  font-family: "Helvetica Neue", sans-serif;
-  font-weight: normal;
+    position: relative;
+    display: none;
+    margin-bottom: 20px;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: normal;
 }
 
 .component-example-fullbleed {
-  margin-right: -20px;
-  margin-left: -20px;
+    margin-right: -20px;
+    margin-left: -20px;
 }
 
 /* Footer
 -------------------------------------------------- */
 
 .footer {
-  overflow: hidden;
-  background-color: #fff;
+    overflow: hidden;
+    background-color: #fff;
 }
 
 .footer .inner-wrapper {
-  text-align: center
+    text-align: center
 }
 
 .footer p, .footer a {
-  font-size: 14px;
-  margin: 6px;
-  color: #0079FF;
+    font-size: 14px;
+    margin: 6px;
+    color: #0079FF;
 }
 
 /* Banner for Mozilla and IE about component rendering poorly
 ------------------------------------------------------------- */
 .notice-banner {
-  cursor: pointer;
-  height: 0;
-  opacity: 0;
-  padding: 0;
-  color: #333;
-  font-size: 16px;
-  text-align: center;
-  background-color: #fff9c4; /* Old browsers */
-  background-image: linear-gradient(to bottom,  #fff9c4 0%,#fff38d 100%); /* W3C */
-  box-shadow: inset 0 -1px 0 rgba(0,0,0,.1);
+    cursor: pointer;
+    height: 0;
+    opacity: 0;
+    padding: 0;
+    color: #333;
+    font-size: 16px;
+    text-align: center;
+    background-color: #fff9c4; /* Old browsers */
+    background-image: linear-gradient(to bottom,  #fff9c4 0%,#fff38d 100%); /* W3C */
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.1);
 }
 
 /* Media queries
 -------------------------------------------------- */
 
 @media only screen and (max-width: 1039px) {
-  .inner-wrapper  {
-    width: 920px;
-  }
+    .inner-wrapper  {
+        width: 920px;
+    }
 
-  .steps .step {
-    width: 280px;
-  }
+    .steps .step {
+        width: 280px;
+    }
 
-  .component {
-    width: 500px;
-  }
+    .component {
+        width: 500px;
+    }
 
-  .iphone-fixed,
-  .iphone-bottom {
-    margin-left: 85px;
-  }
+    .iphone-fixed,
+    .iphone-bottom {
+        margin-left: 85px;
+    }
 }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-  .header-text,
-  .inner-wrapper  {
-    width: 700px;
-  }
+    .header-text,
+    .inner-wrapper  {
+        width: 700px;
+    }
 
-  .component {
-    width: 300px;
-  }
+    .component {
+        width: 300px;
+    }
 
-  .iphone-fixed,
-  .iphone-bottom {
-    margin-left: -25px;
-  }
+    .iphone-fixed,
+    .iphone-bottom {
+        margin-left: -25px;
+    }
 }
 @media only screen and (max-width: 767px) {
-  .outer-wrapper,
-  .inner-wrapper,
-  .header-text,
-  .content,
-  .component {
-    width: auto;
-  }
+    .outer-wrapper,
+    .inner-wrapper,
+    .header-text,
+    .content,
+    .component {
+        width: auto;
+    }
 
-  .inner-wrapper {
-    padding-right: 20px;
-    padding-left: 20px;
-  }
+    .inner-wrapper {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
 
-  /* Have the nav scroll away instead of being fixed */
-  .nav {
-    position: absolute;
-    padding: 2px 0 1px;
-  }
+    /* Have the nav scroll away instead of being fixed */
+    .nav {
+        position: absolute;
+        padding: 2px 0 1px;
+    }
 
-  .nav-title {
-    font-size: 18px;
-    text-align: center;
-  }
+    .nav-title {
+        font-size: 18px;
+        text-align: center;
+    }
 
-  /* Hide the navigation on mobile. Scroll away! */
-  .navigation {
-    display: none;
-  }
+    /* Hide the navigation on mobile. Scroll away! */
+    .navigation {
+        display: none;
+    }
 
-  .content-section {
-    padding-top: 50px;
-  }
+    .content-section {
+        padding-top: 50px;
+    }
 
-  .section-header {
-    padding-bottom: 50px;
-  }
+    .section-header {
+        padding-bottom: 5px;
+    }
 
-  .section-title {
-    margin-bottom: 5px;
-    font-size: 40px;
-  }
+    .section-title {
+        margin-bottom: 5px;
+        font-size: 40px;
+    }
 
-  .section-description {
-    font-size: 18px;
-    line-height: 24px;
-  }
+    .section-description {
+        font-size: 18px;
+        line-height: 24px;
+    }
 
-  .section-components {
-    padding-bottom: 0px;
-  }
+    .section-components {
+        padding-bottom: 0px;
+    }
 
-  .section-informational {
-    padding-bottom: 70px;
-    padding-top: 94px; /* 50+44 px*/
-  }
+    .section-informational {
+        padding-bottom: 70px;
+        padding-top: 94px; /* 50+44 px*/
+    }
 
-  .steps .step {
-    float: none;
-    width: auto;
-    margin: 0 0 30px 0;
-  }
+    .steps .step {
+        float: none;
+        width: auto;
+        margin: 0 0 30px 0;
+    }
 
-  .steps .step:last-child {
-    margin: 0;
-  }
+    .steps .step:last-child {
+        margin: 0;
+    }
 
-  .notice-banner {
-    position: relative;
-    top: 0;
-    font-size: 14px;
-    line-height: 18px;
-  }
+    .notice-banner {
+        position: relative;
+        top: 0;
+        font-size: 14px;
+        line-height: 18px;
+    }
 
-  .notice-banner:after {
-    display: none;
-  }
+    .notice-banner:after {
+        display: none;
+    }
 
-  .component {
-    padding: 50px 20px;
-    margin-left: -20px;
-    margin-right: -20px;
-    opacity: 1;
-    border-bottom: 1px solid #ddd;
-  }
+    .component {
+        padding: 50px 20px;
+        margin-left: -20px;
+        margin-right: -20px;
+        opacity: 1;
+        border-bottom: 1px solid #ddd;
+    }
 
-  .component:last-child {
-    margin-bottom: 80px;
-  }
+    .component:last-child {
+        margin-bottom: 80px;
+    }
 
-  .component-example {
-    display: block;
-  }
+    .component-example {
+        display: block;
+    }
 
-  /* Hide the iPhone on mobile */
-  .iphone {
-    display: none;
-  }
- 
+    /* Hide the iPhone on mobile */
+    .iphone {
+        display: none;
+    }
+
 }
