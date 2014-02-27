@@ -412,6 +412,7 @@ ol, ul  {
 }
 
 .ui-groupbutton .ui-button:active {
+    color: #0079FF;
     background-color: #D3E5F9;
 }
 
