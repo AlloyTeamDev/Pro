@@ -1,0 +1,25 @@
+{
+  "name": "pro",
+  "version": "0.0.0",
+  "homepage": "https://github.com/AlloyTeam/Pro",
+  "authors": [
+    "yuanyan <yuanyan.cao@gmail.com>"
+  ],
+  "description": "Framework for mobile platform.",
+  "keywords": [
+    "mobile"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "doc",
+    "demo",
+    "task",
+    "vendor",
+    "package.json",
+    "Modfile.js",
+    "*.md"
+  ]
+}
