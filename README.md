@@ -8,11 +8,17 @@ Pro
 * Accessibility Support
 * Custom build support
 
+## Screenshot
+
+![screenshot1](https://f.cloud.github.com/assets/677114/2280325/a3db2e1e-9f87-11e3-85bd-6ca4e58a433e.png)
+
+![screenshot2](https://f.cloud.github.com/assets/677114/2280329/a796fb1e-9f87-11e3-86fe-9f88657827c1.png)
+
 ## Demo
 
-![qrcode](https://f.cloud.github.com/assets/677114/2168855/86661b22-954c-11e3-951d-ffe40ad41d16.png)
+Scan below QR code or visit [http://rawgithub.com/AlloyTeam/Pro/master/demo/index.html](http://rawgithub.com/AlloyTeam/Pro/master/demo/index.html)
 
-[http://rawgithub.com/AlloyTeam/Pro/master/demo/index.html](http://rawgithub.com/AlloyTeam/Pro/master/demo/index.html)
+![qrcode](https://f.cloud.github.com/assets/677114/2168855/86661b22-954c-11e3-951d-ffe40ad41d16.png)
 
 ## Basic template
 
@@ -71,7 +77,6 @@ Current version have been tested on the below platforms:
     * Android 4.2 (Sony Xperia Z)
     * Android 4.3 (Nexus 4)
     * Android 4.4 (Nexus 4)
-
 
 ## Built with Pro
 
