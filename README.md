@@ -16,7 +16,7 @@ Pro
 
 ## Demo
 
-Scan below QR code or visit [http://rawgithub.com/AlloyTeam/Pro/master/demo/index.html](http://rawgithub.com/AlloyTeam/Pro/master/demo/index.html)
+Scan below QR code or visit [http://url.cn/NDKvRr](http://url.cn/NDKvRr) on your handset.
 
 ![qrcode](https://f.cloud.github.com/assets/677114/2168855/86661b22-954c-11e3-951d-ffe40ad41d16.png)
 
